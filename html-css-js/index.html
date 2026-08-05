@@ -29,12 +29,12 @@
 
     <div>
       <a href="#">Iniciar sesión</a>
-      <a href="#">Registrarse</a>
+      <a href="#" class="btn-secondary">Registrarse</a>
     </div>
   </header>
 
-  <main>
-    <section>
+  <main class="container">
+    <section class="hero">
       <h1>Encuentra el servicio freelance perfecto ahora mismo</h1>
 
       <p>
@@ -43,38 +43,103 @@
       </p>
 
       <form action="" role="search">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"
-          class="icon icon-tabler icons-tabler-outline icon-tabler-search">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
-          <path d="M21 21l-6 -6" />
-        </svg>
+        <div class="search-bar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-search">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+            <path d="M21 21l-6 -6" />
+          </svg>
 
-        <input type="text" name="" id="" placeholder="¿Qué buscas? Ej: Desarrollador web" />
+          <input type="text" name="" id="" placeholder="¿Qué buscas? Ej: Desarrollador web, traductor, etc." />
 
-        <button type="submit">Buscar</button>
+          <button type="submit">Buscar</button>
+        </div>
       </form>
     </section>
 
     <section>
-      <div>
+      <div class="container">
         <!-- Filters -->
-        <div>
-          <button>
+        <div class="filters">
+          <button class="filter-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" 
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" 
+              class="icon icon-tabler icons-tabler-outline icon-tabler-category">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M4 4h6v6h-6l0 -6" />
+              <path d="M14 4h6v6h-6l0 -6" />
+              <path d="M4 14h6v6h-6l0 -6" />
+              <path d="M14 17a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+            </svg>
             <p>Categoria</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" 
+              stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" 
+              class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M6 9l6 6l6 -6" />
+            </svg>
           </button>
-          <button>
+          <button class="filter-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" 
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" 
+              class="icon icon-tabler icons-tabler-outline icon-tabler-currency-dollar">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M16.7 8a3 3 0 0 0 -2.7 -2h-4a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-4a3 3 0 0 1 -2.7 -2" />
+              <path d="M12 3v3m0 12v3" />
+            </svg>
             <p>Precio</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" 
+              stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" 
+              class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M6 9l6 6l6 -6" />
+            </svg>
           </button>
-          <button>
+          <button class="filter-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" 
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" 
+              class="icon icon-tabler icons-tabler-outline icon-tabler-star">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873l-6.158 -3.245" />
+            </svg>
             <p>Calificación</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" 
+              stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" 
+              class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M6 9l6 6l6 -6" />
+            </svg>
           </button>
-          <div>
-            <button>
-              <p>Ordenar por</p>
-            </button>
-          </div>
+          <button class="filter-btn sort-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" 
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" 
+              class="icon icon-tabler icons-tabler-outline icon-tabler-adjustments-horizontal">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M12 6a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+              <path d="M4 6l8 0" />
+              <path d="M16 6l4 0" />
+              <path d="M6 12a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+              <path d="M4 12l2 0" />
+              <path d="M10 12l10 0" />
+              <path d="M15 18a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+              <path d="M4 18l11 0" />
+              <path d="M19 18l1 0" />
+            </svg>
+            <p>Ordenar por</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" 
+              stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" 
+              class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M6 9l6 6l6 -6" />
+            </svg>
+          </button>
+        </div>
+
+        </div>
+        <!-- Popular Services -->
+        <div class="popular-services">
           <h2>Servicios Populares</h2>
           <!-- Grid Servicios -->
           <div class="services">
@@ -334,10 +399,67 @@
         </div>
     </section>
     <!--Paginacion-->
-    <div></div>
+    <div class="pagination">
+      <button disabled>Anterior</button>
+
+      <button class="active">1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>4</button>
+      <button>5</button>
+
+      <button>Siguiente</button>
+    </div>
   </main>
 
-  <footer><small>&copy; 2026 ServiceMarket. Todos los derechos reservados.</small></footer>
+  <footer class="footer">
+    <div class="footer-links container">
+      <div class="footer-column">
+        <h3>CATEGORIES</h3>
+        <ul>
+          <li><a href="#">Graphics & Design</a></li>
+          <li><a href="#">Writing & Translation</a></li>
+          <li><a href="#">Video & Animation</a></li>
+          <li><a href="#">Programming & Tech</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>ABOUT</h3>
+        <ul>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press & News</a></li>
+          <li><a href="#">Partnerships</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>SUPPORT</h3>
+        <ul>
+          <li><a href="#">Help & Support</a></li>
+          <li><a href="#">Trust & Safety</a></li>
+          <li><a href="#">Selling on ServiceMarket</a></li>
+          <li><a href="#">Buying on ServiceMarket</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>COMMUNITY</h3>
+        <ul>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Forum</a></li>
+          <li><a href="#">Affiliates</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom container">
+      <small>&copy; 2026 ServiceMarket. Todos los derechos reservados.</small>
+    </div>
+  </footer>
 </body>
 
 </html>
