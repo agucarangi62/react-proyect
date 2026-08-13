@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ServiceMarket - Encuentra servicios freelance</title>
+    <meta
+      name="description"
+      content="Contrata los mejores servicios freelance, aqui puedes encontrar
+    freelancers profesionales y con experiencia en más de 500 categorias y sectores."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header class="site-header">
+      <h1>
+        <svg
+          fill="currentColor"
+          viewbox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z"
+            fill-rule="evenodd"
+          ></path>
+        </svg>
+        ServiceMarket
+      </h1>
+
+      <nav>
+        <a href="/html-css-js/index.html">Explorar</a>
+        <a href="#">¿Cómo funciona?</a>
+        <a href="#">Conviertete en vendedor</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#">Iniciar sesión</a>
+        <a href="#" class="btn-secondary">Registrarse</a>
+      </div>
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="26"
+          height="26"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M4 6h16" />
+          <path d="M4 12h16" />
+          <path d="M4 18h16" />
+        </svg>
+      </button>
+    </header>
+
+    <div class="menu-overlay"></div>
+    <nav class="mobile-menu">
+      <button class="menu-close">&times;</button>
+      <h1>
+        <svg
+          fill="currentColor"
+          viewbox="0 0 48 48"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            clip-rule="evenodd"
+            d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z"
+            fill-rule="evenodd"
+          ></path>
+        </svg>
+        ServiceMarket
+      </h1>
+
+      <a href="/html-css-js/index.html">Explorar</a>
+      <a href="#">¿Cómo funciona?</a>
+      <a href="#">Conviértete en vendedor</a>
+      <hr />
+      <a href="#">Iniciar sesión</a>
+      <a href="#">Registrarse</a>
+    </nav>
+
+    <main class="search-page">
+      <div class="search-layout">
+        <aside class="filters-aside">
+          <button class="filters-close" type="button">✕</button>
+          <h2 class="filters-title">Filtros</h2>
+
+          <form class="filters-form">
+            <!-- Category -->
+            <details class="filter-group" open>
+              <summary class="filter-header">
+                <span>Categoria</span>
+                <svg
+                  class="chevron"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M6 9l6 6l6 -6" />
+                </svg>
+              </summary>
+
+              <div class="filter-content">
+                <label class="checkbox-option">
+                  <input type="checkbox" checked />
+                  <span>Web Design</span>
+                </label>
+
+                <label class="checkbox-option">
+                  <input type="checkbox" />
+                  <span>Copywriting</span>
+                </label>
+
+                <label class="checkbox-option">
+                  <input type="checkbox" />
+                  <span>Logo Design</span>
+                </label>
+
+                <label class="checkbox-option">
+                  <input type="checkbox" />
+                  <span>Video Editing</span>
+                </label>
+              </div>
+            </details>
+
+            <!-- Price -->
+            <details class="filter-group" open>
+              <summary class="filter-header">
+                <span>Rango de precios</span>
+                <svg
+                  class="chevron"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M6 9l6 6l6 -6" />
+                </svg>
+              </summary>
+
+              <div class="filter-content">
+                <input type="range" />
+
+                <div class="price-values">
+                  <span>$5</span>
+                  <span>$1000+</span>
+                </div>
+              </div>
+            </details>
+
+            <!-- Rating -->
+            <details class="filter-group">
+              <summary class="filter-header">
+                <span>Rate</span>
+                <svg
+                  class="chevron"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M6 9l6 6l6 -6" />
+                </svg>
+              </summary>
+
+              <div class="filter-content">
+                <label class="checkbox-option">
+                  <input type="checkbox" />
+                  <span>★ 4 Estrellas o mas</span>
+                </label>
+
+                <label class="checkbox-option">
+                  <input type="checkbox" />
+                  <span>★ 3 Estrellas o mas</span>
+                </label>
+              </div>
+            </details>
+
+            <!-- Delivery -->
+            <details class="filter-group">
+              <summary class="filter-header">
+                <span>Tiempo de entrega</span>
+                <svg
+                  class="chevron"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M6 9l6 6l6 -6" />
+                </svg>
+              </summary>
+
+              <div class="filter-content">
+                <select>
+                  <option>Cualquiera</option>
+                  <option>En menos de 24 horas</option>
+                  <option>En menos de 3 dias</option>
+                  <option>En menos de 7 dias</option>
+                </select>
+              </div>
+            </details>
+
+            <!-- Language -->
+            <details class="filter-group">
+              <summary class="filter-header">
+                <span>Idioma</span>
+                <svg
+                  class="chevron"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M6 9l6 6l6 -6" />
+                </svg>
+              </summary>
+
+              <div class="filter-content">
+                <select>
+                  <option>Cualquiera</option>
+                  <option>Español</option>
+                  <option>Inglés</option>
+                  <option>Frances</option>
+                  <option>Italiano</option>
+                </select>
+              </div>
+            </details>
+
+            <div class="filter-actions">
+              <button class="btn-primary" type="submit">Aplicar</button>
+              <button class="btn-secondary" type="reset">Limpiar</button>
+            </div>
+          </form>
+        </aside>
+
+        <section class="search-content">
+          <section class="search-header">
+            <h1>Explora los servicios de la comunidad</h1>
+            <p>Encuentra el servicio freelance perfecto ahora mismo</p>
+            <form action="" role="search">
+              <div class="search-bar">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-search"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                  <path d="M21 21l-6 -6" />
+                </svg>
+
+                <input
+                  type="text"
+                  name=""
+                  id=""
+                  placeholder="¿Qué buscas? Ej: Desarrollador web, traductor, etc."
+                />
+                <button type="submit">Buscar</button>
+              </div>
+            </form>
+          </section>
+
+          <div class="mobile-filters">
+            <button class="filter-toggle">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-filter"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M4 4h16v2.172a2 2 0 0 1 -.586 1.414l-4.414 4.414v7l-6 2v-8.5l-4.48 -4.928a2 2 0 0 1 -.52 -1.345v-2.227"
+                />
+              </svg>
+              Filtros
+            </button>
+          </div>
+
+          <section class="results">
+            <div class="results-header">
+              <p>Resultados 1-12 de 1200</p>
+              <div class="sort">
+                <label for="sort">Ordenar por:</label>
+
+                <select id="sort" name="sort">
+                  <option value="recommended">Recomendados</option>
+                  <option value="popular">Popular</option>
+                  <option value="newest">Nuevos</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="search-services">
+              <!-- Cards -->
+              <article class="service-card">
+                <header class="card-header">
+                  <div class="card-image">
+                    <img
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcq__tFWuWUiuRWGvRRtGeKJTYeJn8tkHWGYq6qwXO0q7vwensRSqbaLjYQbIv5Vu8cEp5BYbwA3R1atgRIIWYIkp6jdJ04jkJfHBerwkg2bhKO8-N8LfEWEkXdmjlhsBjLc5nlpOLokf2UbY6_6h2nEVQvKXXTV34PGi3Ifhr7nbw2WzF8xgj9gpAdbCecZw-NQ4DWr9wflpBzAu4YDv_rfjWy7YXiaQHKOcXUZofYxC5bAEi-j0OlaCrUCuq5Lsn8sLdQjQk6A"
+                      alt=""
+                    />
+                  </div>
+                </header>
+
+                <div class="card-body">
+                  <div class="card-seller">
+                    <img
+                      alt="Samantha Lee's avatar"
+                      class="w-6 h-6 rounded-full"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ5nkRJXucyObC5ET91nPXEoWUlwr0pAvfO1fBNNgfE-a4jTfVi831ZDkCL4qd-dRjo9u5UQIQ_mE1nuAHHEoOwyEVzKS4ozGd4uOqRbWM1u6ZYT1RnIbVVm4Eo0VnnxQZsSu_wsmcs17-6t0HLPYagGBEPYmhHazzkP-_S3YGst8RQL1_zeh0pC1vFGhdEgG4_E_WOf-_M49uVJ9agR7m-ksSdRJP039gZmC2jLvcZLkRMrHBSPnmP7YiFfEny9SLAoQNhx2I8g"
+                    />
+                    <p>Samantha Lee</p>
+                  </div>
+
+                  <p class="card-title">
+                    I will create a modern minimalist logo design
+                  </p>
+
+                  <div class="card-rating">
+                    <span>★</span>
+                    <strong>4.9</strong>
+                    <p>(245)</p>
+                  </div>
+                </div>
+
+                <footer class="card-search-footer">
+                  <button class="fav-footer-btn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-tabler icons-tabler-outline icon-tabler-heart"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path
+                        d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"
+                      />
+                    </svg>
+                  </button>
+                  <p>From <span>$50</span></p>
+                </footer>
+              </article>
+
+              <article class="service-card">
+                <header class="card-header">
+                  <div class="card-image">
+                    <img
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcq__tFWuWUiuRWGvRRtGeKJTYeJn8tkHWGYq6qwXO0q7vwensRSqbaLjYQbIv5Vu8cEp5BYbwA3R1atgRIIWYIkp6jdJ04jkJfHBerwkg2bhKO8-N8LfEWEkXdmjlhsBjLc5nlpOLokf2UbY6_6h2nEVQvKXXTV34PGi3Ifhr7nbw2WzF8xgj9gpAdbCecZw-NQ4DWr9wflpBzAu4YDv_rfjWy7YXiaQHKOcXUZofYxC5bAEi-j0OlaCrUCuq5Lsn8sLdQjQk6A"
+                      alt=""
+                    />
+                  </div>
+                </header>
+
+                <div class="card-body">
+                  <div class="card-seller">
+                    <img
+                      alt="Samantha Lee's avatar"
+                      class="w-6 h-6 rounded-full"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ5nkRJXucyObC5ET91nPXEoWUlwr0pAvfO1fBNNgfE-a4jTfVi831ZDkCL4qd-dRjo9u5UQIQ_mE1nuAHHEoOwyEVzKS4ozGd4uOqRbWM1u6ZYT1RnIbVVm4Eo0VnnxQZsSu_wsmcs17-6t0HLPYagGBEPYmhHazzkP-_S3YGst8RQL1_zeh0pC1vFGhdEgG4_E_WOf-_M49uVJ9agR7m-ksSdRJP039gZmC2jLvcZLkRMrHBSPnmP7YiFfEny9SLAoQNhx2I8g"
+                    />
+                    <p>Samantha Lee</p>
+                  </div>
+
+                  <p class="card-title">
+                    I will create a modern minimalist logo design
+                  </p>
+
+                  <div class="card-rating">
+                    <span>★</span>
+                    <strong>4.9</strong>
+                    <p>(245)</p>
+                  </div>
+                </div>
+
+                <footer class="card-search-footer">
+                  <button class="fav-footer-btn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-tabler icons-tabler-outline icon-tabler-heart"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path
+                        d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"
+                      />
+                    </svg>
+                  </button>
+                  <p>From <span>$50</span></p>
+                </footer>
+              </article>
+
+              <article class="service-card">
+                <header class="card-header">
+                  <div class="card-image">
+                    <img
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcq__tFWuWUiuRWGvRRtGeKJTYeJn8tkHWGYq6qwXO0q7vwensRSqbaLjYQbIv5Vu8cEp5BYbwA3R1atgRIIWYIkp6jdJ04jkJfHBerwkg2bhKO8-N8LfEWEkXdmjlhsBjLc5nlpOLokf2UbY6_6h2nEVQvKXXTV34PGi3Ifhr7nbw2WzF8xgj9gpAdbCecZw-NQ4DWr9wflpBzAu4YDv_rfjWy7YXiaQHKOcXUZofYxC5bAEi-j0OlaCrUCuq5Lsn8sLdQjQk6A"
+                      alt=""
+                    />
+                  </div>
+                </header>
+
+                <div class="card-body">
+                  <div class="card-seller">
+                    <img
+                      alt="Samantha Lee's avatar"
+                      class="w-6 h-6 rounded-full"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ5nkRJXucyObC5ET91nPXEoWUlwr0pAvfO1fBNNgfE-a4jTfVi831ZDkCL4qd-dRjo9u5UQIQ_mE1nuAHHEoOwyEVzKS4ozGd4uOqRbWM1u6ZYT1RnIbVVm4Eo0VnnxQZsSu_wsmcs17-6t0HLPYagGBEPYmhHazzkP-_S3YGst8RQL1_zeh0pC1vFGhdEgG4_E_WOf-_M49uVJ9agR7m-ksSdRJP039gZmC2jLvcZLkRMrHBSPnmP7YiFfEny9SLAoQNhx2I8g"
+                    />
+                    <p>Samantha Lee</p>
+                  </div>
+
+                  <p class="card-title">
+                    I will create a modern minimalist logo design
+                  </p>
+
+                  <div class="card-rating">
+                    <span>★</span>
+                    <strong>4.9</strong>
+                    <p>(245)</p>
+                  </div>
+                </div>
+
+                <footer class="card-search-footer">
+                  <button class="fav-footer-btn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-tabler icons-tabler-outline icon-tabler-heart"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path
+                        d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"
+                      />
+                    </svg>
+                  </button>
+                  <p>From <span>$50</span></p>
+                </footer>
+              </article>
+
+              <article class="service-card">
+                <header class="card-header">
+                  <div class="card-image">
+                    <img
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcq__tFWuWUiuRWGvRRtGeKJTYeJn8tkHWGYq6qwXO0q7vwensRSqbaLjYQbIv5Vu8cEp5BYbwA3R1atgRIIWYIkp6jdJ04jkJfHBerwkg2bhKO8-N8LfEWEkXdmjlhsBjLc5nlpOLokf2UbY6_6h2nEVQvKXXTV34PGi3Ifhr7nbw2WzF8xgj9gpAdbCecZw-NQ4DWr9wflpBzAu4YDv_rfjWy7YXiaQHKOcXUZofYxC5bAEi-j0OlaCrUCuq5Lsn8sLdQjQk6A"
+                      alt=""
+                    />
+                  </div>
+                </header>
+
+                <div class="card-body">
+                  <div class="card-seller">
+                    <img
+                      alt="Samantha Lee's avatar"
+                      class="w-6 h-6 rounded-full"
+                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ5nkRJXucyObC5ET91nPXEoWUlwr0pAvfO1fBNNgfE-a4jTfVi831ZDkCL4qd-dRjo9u5UQIQ_mE1nuAHHEoOwyEVzKS4ozGd4uOqRbWM1u6ZYT1RnIbVVm4Eo0VnnxQZsSu_wsmcs17-6t0HLPYagGBEPYmhHazzkP-_S3YGst8RQL1_zeh0pC1vFGhdEgG4_E_WOf-_M49uVJ9agR7m-ksSdRJP039gZmC2jLvcZLkRMrHBSPnmP7YiFfEny9SLAoQNhx2I8g"
+                    />
+                    <p>Samantha Lee</p>
+                  </div>
+
+                  <p class="card-title">
+                    I will create a modern minimalist logo design
+                  </p>
+
+                  <div class="card-rating">
+                    <span>★</span>
+                    <strong>4.9</strong>
+                    <p>(245)</p>
+                  </div>
+                </div>
+
+                <footer class="card-search-footer">
+                  <button class="fav-footer-btn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-tabler icons-tabler-outline icon-tabler-heart"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path
+                        d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"
+                      />
+                    </svg>
+                  </button>
+                  <p>From <span>$50</span></p>
+                </footer>
+              </article>
+            </div>
+
+            <div class="pagination">
+              <a >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M15 6l-6 6l6 6" />
+                </svg>
+              </a>
+              <a class="is-active">1</a>
+              <a>2</a>
+              <a>3</a>
+              <a>4</a>
+              <a>5</a>
+              <a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M9 6l6 6l-6 6" />
+                </svg>
+              </a>
+            </div>
+          </section>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-links container">
+        <div class="footer-column">
+          <h3>CATEGORIES</h3>
+          <ul>
+            <li><a href="#">Graphics & Design</a></li>
+            <li><a href="#">Writing & Translation</a></li>
+            <li><a href="#">Video & Animation</a></li>
+            <li><a href="#">Programming & Tech</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>ABOUT</h3>
+          <ul>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press & News</a></li>
+            <li><a href="#">Partnerships</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>SUPPORT</h3>
+          <ul>
+            <li><a href="#">Help & Support</a></li>
+            <li><a href="#">Trust & Safety</a></li>
+            <li><a href="#">Selling on ServiceMarket</a></li>
+            <li><a href="#">Buying on ServiceMarket</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h3>COMMUNITY</h3>
+          <ul>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Forum</a></li>
+            <li><a href="#">Affiliates</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom container">
+        <small>&copy; 2026 ServiceMarket. Todos los derechos reservados.</small>
+      </div>
+    </footer>
+    <div class="filters-overlay"></div>
+
+    <script src="/html-css-js/js/main.js"></script>
+  </body>
+</html>
