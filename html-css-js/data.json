@@ -1,0 +1,142 @@
+[
+  {
+    "id": "7a4d1d8b-1e45-4d8c-9f1a-8c2f9a9121a4",
+    "titulo": "Desarrollador de Software Senior",
+    "empresa": "Tech Solutions Inc.",
+    "ubicacion": "Remoto",
+    "descripcion": "Creare un nuevo sitio web para una empresa de tecnología. El proyecto debe ser escalable y adaptable a diferentes dispositivos y navegadores.",
+    "imagen": "https://fastly.picsum.photos/id/6/5000/3333.jpg?hmac=pq9FRpg2xkAQ7J9JTrBtyFcp9-qvlu8ycAi7bUHlL7I",
+    "avatar": "https://randomuser.me/api/portraits/men/3.jpg",
+    "data": {
+      "category": "technology",
+      "price": "500",
+      "rating": "4.5"
+    }
+  },
+  {
+    "id": "b3f1c2e9-5d6a-4f8b-9c1a-7e2f9a9121b5",
+    "titulo": "Diseñador Gráfico Freelance",
+    "empresa": "Creative Minds Studio",
+    "ubicacion": "Ciudad de México, México",
+    "descripcion": "Diseñar una serie de materiales gráficos para una campaña publicitaria. Se requiere experiencia en diseño de logotipos y branding.",
+    "imagen": "https://fastly.picsum.photos/id/20/3670/2462.jpg?hmac=CmQ0ln-k5ZqkdtLvVO23LjVAEabZQx2wOaT4pyeG10I",
+    "avatar": "https://randomuser.me/api/portraits/men/4.jpg",
+    "data": {
+      "category": "marketing",
+      "price": "300",
+      "rating": "4.8"
+    }
+  },
+  {
+    "id": "c2d3e4f5-6g7h-8i9j-0k1l-2m3n4o5p6q7r",
+    "titulo": "Especialista en Marketing Digital",
+    "empresa": "Marketing Pro Agency",
+    "ubicacion": "Barcelona, España",
+    "descripcion": "Desarrollar estrategias de marketing digital para aumentar la presencia en línea de nuestros clientes. Se requiere experiencia en SEO y campañas de publicidad en redes sociales.",
+    "imagen": "https://fastly.picsum.photos/id/60/1920/1200.jpg?hmac=fAMNjl4E_sG_WNUjdU39Kald5QAHQMh-_-TsIbbeDNI",
+    "avatar": "https://randomuser.me/api/portraits/men/5.jpg",
+    "data": {
+      "category": "marketing",
+      "price": "400",
+      "rating": "4.7"
+    }
+  },
+  {
+    "id": "d4e5f6g7-8h9i-0j1k-2l3m-4n5o6p7q8r9s",
+    "titulo": "Redactor de Contenido Web",
+    "empresa": "Content Creators Hub",
+    "ubicacion": "Buenos Aires, Argentina",
+    "descripcion": "Escribir artículos y contenido web optimizado para SEO. Se requiere experiencia en redacción persuasiva y conocimiento de las mejores prácticas de SEO.",
+    "imagen": "https://fastly.picsum.photos/id/367/4928/3264.jpg?hmac=H-2OwMlcYm0a--Jd2qaZkXgFZFRxYyGrkrYjupP8Sro0",
+    "avatar": "https://randomuser.me/api/portraits/men/6.jpg",
+    "data": {
+      "category": "writing",
+      "price": "250",
+      "rating": "4.6"
+    }
+  },
+  {
+    "id": "e5f6g7h8-9i0j-1k2l-3m4n-5o6p7q8r9s0t",
+    "titulo": "Desarrollador de Aplicaciones Móviles",
+    "empresa": "App Innovators Ltd.",
+    "ubicacion": "Lima, Perú",
+    "descripcion": "Crear una aplicación móvil para iOS y Android. Se requiere experiencia en desarrollo de aplicaciones nativas y conocimiento de las últimas tendencias en diseño de interfaces móviles.",
+    "imagen": "https://fastly.picsum.photos/id/366/4000/3000.jpg?hmac=zphhHOH9ofToN2jNHd8z-nc98NrBd8y2okWXEXetLDg",
+    "avatar": "https://randomuser.me/api/portraits/women/7.jpg",
+    "data": {
+      "category": "technology",
+      "price": "600",
+      "rating": "4.9"
+    }
+  },
+  {
+    "id": "f6g7h8i9-0j1k-2l3m-4n5o-6p7q8r9s0t1u",
+    "titulo": "Especialista en Gestión de Proyectos",
+    "empresa": "Project Managers Co.",
+    "ubicacion": "Santiago, Chile",
+    "descripcion": "Gestionar proyectos de desarrollo de software. Se requiere experiencia en gestión de equipos y conocimiento de metodologías agiles.",
+    "imagen": "https://fastly.picsum.photos/id/378/5000/3333.jpg?hmac=Jh9hcCIe9-6cNIvJnO5d33CuAR-3RKeOMRx4ki5nKt8",
+    "avatar": "https://randomuser.me/api/portraits/women/3.jpg",
+    "data": {
+      "category": "business",
+      "price": "450",
+      "rating": "4.7"
+    }
+  },
+  {
+    "id": "g7h8i9j0-1k2l-3m4n-5o6p-7q8r9s0t1u2v",
+    "titulo": "Especialista en Inteligencia Artificial",
+    "empresa": "AI Experts Co.",
+    "ubicacion": "Tokyo, Japon",
+    "descripcion": "Desarrollar modelos de inteligencia artificial para resolver problemas complejos. Se requiere experiencia en Machine Learning y conocimiento de las últimas tendencias en IA.",
+    "imagen": "https://fastly.picsum.photos/id/532/3820/2762.jpg?hmac=XaQFIsc53McPShHjMLyMhQzmY6Ip1omZzp7fdHjQxjA",
+    "avatar": "https://randomuser.me/api/portraits/women/12.jpg",
+    "data": {
+      "category": "ia",
+      "price": "700",
+      "rating": "4.9"
+    }
+  },
+  {
+    "id": "h8i9j0k1-2l3m-4n5o-6p7q-8r9s0t1u2v3w",
+    "titulo": "Consultor de Ciberseguridad",
+    "empresa": "CyberSecure Solutions",
+    "ubicacion": "San Francisco, Estados Unidos",
+    "descripcion": "Proporcionar asesoramiento y soluciones de ciberseguridad para proteger los sistemas y datos de nuestros clientes. Se requiere experiencia en seguridad informática y conocimiento de las últimas amenazas y vulnerabilidades.",
+    "imagen": "https://fastly.picsum.photos/id/687/4288/2848.jpg?hmac=NXlF4vW4yF8Er6EDhQ7llR8JFZnwAqBX-kG0BnP68vY",
+    "avatar": "https://randomuser.me/api/portraits/men/13.jpg",
+    "data": {
+      "category": "technology",
+      "price": "550",
+      "rating": "4.8"
+    }
+  },
+  {
+    "id": "i9j0k1l2-3m4n-5o6p-7q8r-9s0t1u2v3w4x",
+    "titulo": "Especialista en Desarrollo Web",
+    "empresa": "Web Development Co.",
+    "ubicacion": "Paris, Francia",
+    "descripcion": "Desarrollar sitios web y aplicaciones web. Se requiere experiencia en desarrollo de interfaces de usuario y conocimiento de las últimas tendencias en disenño web.",
+    "imagen": "https://fastly.picsum.photos/id/668/4133/2745.jpg?hmac=n2-nIVXnrSE_pCjAmI-nlhBicoySz1xq-KUFMr9ERrM",
+    "avatar": "https://randomuser.me/api/portraits/men/24.jpg",
+    "data": {
+      "category": "technology",
+      "price": "500",
+      "rating": "4.7"
+    }
+  },
+  {
+    "id": "j0k1l2m3-4n5o-6p7q-8r9s-0t1u2v3w4x5y",
+    "titulo": "Especialista en Análisis de Datos",
+    "empresa": "Data Insights Co.",
+    "ubicacion": "Toronto, Canadá",
+    "descripcion": "Analizar grandes conjuntos de datos para extraer información valiosa y tomar decisiones informadas. Se requiere experiencia en análisis de datos y conocimiento de herramientas de visualización.",
+    "imagen": "https://fastly.picsum.photos/id/659/2731/1536.jpg?hmac=jwFueQ8WaCS2sR6LVKFGQ3-emm0_HqHEOhQDt8AzHyQ",
+    "avatar": "https://randomuser.me/api/portraits/women/23.jpg",
+    "data": {
+      "category": "marketing",
+      "price": "600",
+      "rating": "4.8"
+    }
+  }
+]

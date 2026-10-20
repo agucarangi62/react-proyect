@@ -352,6 +352,10 @@ body {
   flex-wrap: wrap;
 }
 
+.filter-dropdown {
+  position: relative;
+}
+
 .filter-btn {
   display: flex;
   align-items: center;
@@ -365,16 +369,60 @@ body {
   transition: 0.2s;
 }
 
+.filter-btn p {
+  margin: 0;
+}
+
 .filter-btn:hover {
   background: var(--secundary-hover);
 }
 
-.sort-btn {
+.sort-dropdown {
   margin-left: auto;
 }
 
+.dropdown-menu {
+  display: none;
+
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+
+  min-width: 220px;
+
+  padding: 6px;
+
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+
+  z-index: 100;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-menu li {
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background: var(--background-terciary);
+}
+
+.dropdown-menu.active {
+  display: block;
+}
+
+
+
 @media (max-width: 768px) {
-  .sort-btn {
+  .sort-dropdown {
     margin-left: 0;
   }
 }
@@ -393,7 +441,8 @@ body {
 .services {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(285px, 378px));
+  justify-content: center;
 }
 
 .service-card {
@@ -408,6 +457,10 @@ body {
 
   &:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  &.is-hidden {
+    display: none;
   }
 }
 
@@ -925,8 +978,9 @@ body {
   display: grid;
   padding: 0rem 1.75rem;
 
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 360px));
   gap: 1rem;
+  justify-content: center;
 }
 
 /* SEARCH CARD */
@@ -987,4 +1041,23 @@ body {
 
 .fav-footer-btn:hover {
   color: var(--primary-light);
+}
+
+/*BOTON DE PRUEBA*/
+.btn-add {
+  background: var(--background-primary);
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 0.5rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &.is-applied{
+    background: #4caf4fab;
+    color: var(--text-secondary);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 }
