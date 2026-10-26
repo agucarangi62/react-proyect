@@ -519,6 +519,12 @@ body {
   transition: color 0.2s ease;
 }
 
+.card-description {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
 .service-card:hover .card-title {
   color: var(--primary-hover);
 }

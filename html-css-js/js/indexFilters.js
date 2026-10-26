@@ -6,6 +6,7 @@ const selectedFilters = {
   price: "",
   rating: "",
   sort: "",
+  search: ""
 };
 
 filterDropdowns.forEach((dropdown) => {
@@ -62,12 +63,14 @@ function filterServices(){
     const price = service.dataset.price;
     const rating = service.dataset.rating;
     const sort = service.dataset.sort;
+    const title = service.querySelector(".card-title").textContent.toLowerCase();
   
     if(
       (selectedFilters.category === "" || selectedFilters.category === category) &&
       (selectedFilters.price === "" || Number(price) >= Number(selectedFilters.price)) &&
       (selectedFilters.rating === "" || Number(rating) >= Number(selectedFilters.rating)) &&
-      (selectedFilters.sort === "" || selectedFilters.sort === sort)
+      (selectedFilters.sort === "" || selectedFilters.sort === sort) &&
+      (selectedFilters.search === "" || title.includes(selectedFilters.search))
     ) {
       service.classList.remove("is-hidden");
     } else {
@@ -81,6 +84,8 @@ function filterServices(){
 const searchInput = document.querySelector("#index-search-input");
 
 searchInput.addEventListener("input", () => {
-  console.log(searchInput.value);
+  selectedFilters.search = searchInput.value.trim().toLowerCase();
+
+  filterServices();
 });
 
