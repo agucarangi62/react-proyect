@@ -1,3 +1,5 @@
+import {useState} from "react";
+
 import ServiceCard from "./components/ServiceCard.jsx";
 import Header from "./components/Header.jsx";
 import MobileMenu from "./components/MobileMenu.jsx";
@@ -8,7 +10,16 @@ import SearchFormSection from "./components/SearchFormSection.jsx";
 import getServices from "./services/serviceService.js";
 
 function App() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 5;
+
   const services = getServices();
+
+  const handlePageChange = (page) => {
+    // Lógica para cambiar de página
+    setCurrentPage(page);
+    console.log(`Cambiando a la página ${page}`);
+  };
 
   return (
     <>
@@ -32,7 +43,7 @@ function App() {
           </div>
         </section>
         {/* Paginacion */}
-        <Pagination />
+        <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange}/>
       </main>
 
       <Footer />
