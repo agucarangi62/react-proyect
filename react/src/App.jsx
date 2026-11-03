@@ -10,15 +10,22 @@ import SearchFormSection from "./components/SearchFormSection.jsx";
 import getServices from "./services/serviceService.js";
 
 function App() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 5;
-
   const services = getServices();
+
+  const RESULT_PER_PAGE = 8;
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(services.length / RESULT_PER_PAGE);
+
+  const pagedResult = services.slice(
+    (currentPage - 1) * RESULT_PER_PAGE,
+    currentPage * RESULT_PER_PAGE
+  );
+
 
   const handlePageChange = (page) => {
     // Lógica para cambiar de página
     setCurrentPage(page);
-    console.log(`Cambiando a la página ${page}`);
   };
 
   return (
@@ -36,7 +43,7 @@ function App() {
             {/* Grid Servicios */}
             <div className="services">
               {/* Services */}
-              {services.map((service) => (
+              {pagedResult.map((service) => (
                 <ServiceCard key={service.id} {...service} />
               ))}
             </div>
