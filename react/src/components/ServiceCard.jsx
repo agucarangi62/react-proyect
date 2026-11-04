@@ -1,3 +1,5 @@
+import styles from "./ServiceCard.module.css";
+
 export default function ServiceCard({
   title,
   freelancer,
@@ -8,18 +10,18 @@ export default function ServiceCard({
 }) {
   return (
     <article
-      className="service-card"
+      className={styles.serviceCard}
       data-category={data.category}
       data-price={data.price}
       data-rating={data.rating}
       data-sort={data.sort}
     >
-      <header className="card-header">
-        <div className="card-image">
+      <header className={styles.cardHeader}>
+        <div className={styles.cardImage}>
           <img src={image} alt="" />
         </div>
 
-        <button className="fav-btn">
+        <button className={styles.favBtn}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -37,10 +39,10 @@ export default function ServiceCard({
           </svg>
         </button>
       </header>
-      <div className="card-body">
-        <p className="card-title">{title}</p>
-        <p className="card-description">{description}</p>
-        <div className="card-author">
+      <div className={styles.cardBody}>
+        <p className={styles.cardTitle}>{title}</p>
+        <p className={styles.cardDescription}>{description}</p>
+        <div className={styles.cardAuthor}>
           <img
             alt={`${freelancer}'s profile picture`}
             className="w-6 h-6 rounded-full"
@@ -51,7 +53,7 @@ export default function ServiceCard({
           </p>
         </div>
       </div>
-      <footer className="card-footer">
+      <footer className={styles.cardFooter}>
         <p>
           Desde <span>${data.price}</span>
         </p>

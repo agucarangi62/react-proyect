@@ -72,9 +72,9 @@ function filterServices(){
       (selectedFilters.sort === "" || selectedFilters.sort === sort) &&
       (selectedFilters.search === "" || title.includes(selectedFilters.search))
     ) {
-      service.classList.remove("is-hidden");
+      service.classList.remove("is-hidden");  // Cambiar a "isHidden cuando se module en react"
     } else {
-      service.classList.add("is-hidden");
+      service.classList.add("is-hidden"); // Cambiar a "isHidden cuando se module en react"
     }
   }) 
 }
