@@ -1,3 +1,5 @@
+import styles from "./Pagination.module.css";
+
 export default function Pagination({ currentPage = 1, totalPages = 5, onPageChange }) {
   // Array de paginas a mostrar
   const pages = Array.from({ length: totalPages }, (_, index) => index + 1);
@@ -29,7 +31,7 @@ export default function Pagination({ currentPage = 1, totalPages = 5, onPageChan
   }
 
   return (
-    <div className="pagination">
+    <div className={styles.pagination}>
       <a style={stylePrevButton} onClick={handlePrevClick}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +54,7 @@ export default function Pagination({ currentPage = 1, totalPages = 5, onPageChan
         <a
           href="#"
           key={page}
-          className={page === currentPage ? "is-active" : ""}
+          className={page === currentPage ? styles.isActive : ""}
           onClick={(event) => handleChangePage(event, page)}
         >
           {page}

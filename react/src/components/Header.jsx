@@ -1,6 +1,8 @@
+import styles from "./Header.module.css";
+
 export default function Header() {
   return (
-    <header className="site-header">
+    <header className={styles.siteHeader}>
       <h1>
         <svg
           fill="currentColor"
@@ -22,13 +24,13 @@ export default function Header() {
         <a href="#">Conviertete en vendedor</a>
       </nav>
 
-      <div className="header-actions">
+      <div className={styles.headerActions}>
         <a href="#">Iniciar sesión</a>
-        <a href="#" className="btn-secondary">
+        <a href="#" className={styles.btnSecondary}>
           Registrarse
         </a>
       </div>
-      <button className="menu-toggle" aria-label="Abrir menú">
+      <button className={styles.menuToggle} aria-label="Abrir menú">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="26"

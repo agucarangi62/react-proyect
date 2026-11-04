@@ -1,9 +1,11 @@
+import styles from "./MobileMenu.module.css";
+
 export default function MobileMenu() {
   return (
     <>
-      <div className="menu-overlay"></div>
-      <nav className="mobile-menu">
-        <button className="menu-close">&times;</button>
+      <div className={styles.menuOverlay}></div>
+      <nav className={styles.mobileMenu}>
+        <button className={styles.menuClose}>&times;</button>
         <h1>
           <svg
             fill="currentColor"

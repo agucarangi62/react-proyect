@@ -1,9 +1,12 @@
+import styles from "./Filters.module.css";
+
+
 export default function Filters() {
   return (
-    <div className="filters">
-      <div className="filter-dropdown" data-filter="category">
+    <div className={styles.filters}>
+      <div className={styles.filterDropdown} data-filter="category">
         <button
-          className="filter-btn"
+          className={styles.filterBtn}
           type="button"
           aria-haspopup="listbox"
           aria-expanded="false"
@@ -43,7 +46,7 @@ export default function Filters() {
             <path d="M6 9l6 6l6 -6" />
           </svg>
         </button>
-        <div className="dropdown-menu">
+        <div className={styles.dropdownMenu}>
           <ul role="listbox">
             <li role="option" data-value="">
               Todas
@@ -70,8 +73,8 @@ export default function Filters() {
         </div>
       </div>
 
-      <div className="filter-dropdown" data-filter="price">
-        <button className="filter-btn">
+      <div className={styles.filterDropdown} data-filter="price">
+        <button className={styles.filterBtn}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -105,7 +108,7 @@ export default function Filters() {
             <path d="M6 9l6 6l6 -6" />
           </svg>
         </button>
-        <div className="dropdown-menu">
+        <div className={styles.dropdownMenu}>
           <ul role="listbox">
             <li role="option" data-value="">
               Todas
@@ -123,8 +126,8 @@ export default function Filters() {
         </div>
       </div>
 
-      <div className="filter-dropdown" data-filter="rating">
-        <button className="filter-btn">
+      <div className={styles.filterDropdown} data-filter="rating">
+        <button className={styles.filterBtn}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -157,7 +160,7 @@ export default function Filters() {
             <path d="M6 9l6 6l6 -6" />
           </svg>
         </button>
-        <div className="dropdown-menu">
+        <div className={styles.dropdownMenu}>
           <ul role="listbox">
             <li role="option" data-value="">
               Todas
@@ -181,8 +184,8 @@ export default function Filters() {
         </div>
       </div>
 
-      <div className="filter-dropdown sort-dropdown" data-filter="sort">
-        <button className="filter-btn sort-btn">
+      <div className={`${styles.filterDropdown} ${styles.sortDropdown}`} data-filter="sort">
+        <button className={`${styles.filterBtn} ${styles.sortBtn}`}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -223,7 +226,7 @@ export default function Filters() {
             <path d="M6 9l6 6l6 -6" />
           </svg>
         </button>
-        <div className="dropdown-menu">
+        <div className={styles.dropdownMenu}>
           <ul role="listbox">
             <li role="option" data-value="">
               Todas

@@ -1,8 +1,10 @@
+import styles from "./Footer.module.css";
+
 export default function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer-links container">
-        <div className="footer-column">
+    <footer className={styles.footer}>
+      <div className={`container ${styles.footerLinks}`} >
+        <div className={styles.footerColumn}>
           <h3>CATEGORIES</h3>
           <ul>
             <li>
@@ -20,7 +22,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="footer-column">
+        <div className={styles.footerColumn}>
           <h3>ABOUT</h3>
           <ul>
             <li>
@@ -38,7 +40,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="footer-column">
+        <div className={styles.footerColumn}>
           <h3>SUPPORT</h3>
           <ul>
             <li>
@@ -56,7 +58,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="footer-column">
+        <div className={styles.footerColumn}>
           <h3>COMMUNITY</h3>
           <ul>
             <li>
@@ -75,7 +77,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="footer-bottom container">
+      <div className={`container ${styles.footerBottom}`}>
         <small>&copy; 2026 ServiceMarket. Todos los derechos reservados.</small>
       </div>
     </footer>

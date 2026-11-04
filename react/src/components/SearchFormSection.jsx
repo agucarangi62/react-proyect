@@ -1,3 +1,4 @@
+import styles from "./SearchFormSection.module.css";
 import Filters from "./Filters.jsx";
 
 export default function SearchFormSection() {
@@ -11,7 +12,7 @@ export default function SearchFormSection() {
       </p>
 
       <form action="" role="search">
-        <div className="search-bar">
+        <div className={styles.searchBar}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
