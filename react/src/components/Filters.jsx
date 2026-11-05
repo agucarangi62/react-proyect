@@ -1,15 +1,49 @@
 import styles from "./Filters.module.css";
+import {useState} from "react";
 
 
 export default function Filters() {
+  const [openFilter, setOpenFilter] = useState(null);
+
+  const [selectedFilters, setSelectedFilters] = useState({
+    category: "",
+    price: "",
+    rating: "",
+    sort: "",
+  });
+
+  const [filterLabels, setFilterLabels] = useState({});
+
+
+  const handleFilterChange = (event) => {
+    const filter = event.currentTarget.dataset.filter;
+    const option = event.target.closest("li");
+    const value = option.dataset.value;
+    const label = option.textContent;
+
+    setSelectedFilters((prevFilters) => ({
+      ...prevFilters,
+      [filter]: value,
+    }));
+
+    setFilterLabels((prevLabels) => ({
+      ...prevLabels,
+      [filter]: value === "" ? "" : label,
+    }));
+
+    setOpenFilter(null);
+
+    console.log(selectedFilters);
+  };
+
   return (
     <div className={styles.filters}>
-      <div className={styles.filterDropdown} data-filter="category">
+      <div className={styles.filterDropdown}>
         <button
           className={styles.filterBtn}
-          type="button"
-          aria-haspopup="listbox"
-          aria-expanded="false"
+          onClick={() => {
+            setOpenFilter(openFilter === "category" ? null : "category");
+          }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +63,9 @@ export default function Filters() {
             <path d="M4 14h6v6h-6l0 -6" />
             <path d="M14 17a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
           </svg>
-          <p>Categoria</p>
+          <p>
+            {filterLabels.category || "Categoría"}
+          </p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -46,8 +82,8 @@ export default function Filters() {
             <path d="M6 9l6 6l6 -6" />
           </svg>
         </button>
-        <div className={styles.dropdownMenu}>
-          <ul role="listbox">
+        <div className={`${styles.dropdownMenu} ${openFilter === "category" ? styles.active : ""}`}>
+          <ul role="listbox" onClick={handleFilterChange} data-filter="category">
             <li role="option" data-value="">
               Todas
             </li>
@@ -74,7 +110,10 @@ export default function Filters() {
       </div>
 
       <div className={styles.filterDropdown} data-filter="price">
-        <button className={styles.filterBtn}>
+        <button 
+          className={styles.filterBtn}
+          onClick={() => setOpenFilter(openFilter === "price" ? null : "price")}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -91,7 +130,9 @@ export default function Filters() {
             <path d="M16.7 8a3 3 0 0 0 -2.7 -2h-4a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-4a3 3 0 0 1 -2.7 -2" />
             <path d="M12 3v3m0 12v3" />
           </svg>
-          <p>Precio</p>
+          <p>
+            {filterLabels.price || "Precio"}
+          </p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -108,8 +149,8 @@ export default function Filters() {
             <path d="M6 9l6 6l6 -6" />
           </svg>
         </button>
-        <div className={styles.dropdownMenu}>
-          <ul role="listbox">
+        <div className={`${styles.dropdownMenu} ${openFilter === "price" ? styles.active : ""}`}>
+          <ul role="listbox" onClick={handleFilterChange} data-filter="price">
             <li role="option" data-value="">
               Todas
             </li>
@@ -127,7 +168,9 @@ export default function Filters() {
       </div>
 
       <div className={styles.filterDropdown} data-filter="rating">
-        <button className={styles.filterBtn}>
+        <button className={styles.filterBtn}
+          onClick={() => setOpenFilter(openFilter === "rating" ? null : "rating")}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -143,7 +186,9 @@ export default function Filters() {
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873l-6.158 -3.245" />
           </svg>
-          <p>Calificación</p>
+          <p>
+            {filterLabels.rating || "Calificación"}
+          </p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -160,8 +205,8 @@ export default function Filters() {
             <path d="M6 9l6 6l6 -6" />
           </svg>
         </button>
-        <div className={styles.dropdownMenu}>
-          <ul role="listbox">
+        <div className={`${styles.dropdownMenu} ${openFilter === "rating" ? styles.active : ""}`}>
+          <ul role="listbox" onClick={handleFilterChange} data-filter="rating">
             <li role="option" data-value="">
               Todas
             </li>
@@ -185,7 +230,9 @@ export default function Filters() {
       </div>
 
       <div className={`${styles.filterDropdown} ${styles.sortDropdown}`} data-filter="sort">
-        <button className={`${styles.filterBtn} ${styles.sortBtn}`}>
+        <button className={`${styles.filterBtn} ${styles.sortBtn}`}
+          onClick={() => setOpenFilter(openFilter === "sort" ? null : "sort")}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -209,7 +256,9 @@ export default function Filters() {
             <path d="M4 18l11 0" />
             <path d="M19 18l1 0" />
           </svg>
-          <p>Ordenar por</p>
+          <p>
+            {filterLabels.sort || "Ordenar por"}
+          </p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -226,8 +275,8 @@ export default function Filters() {
             <path d="M6 9l6 6l6 -6" />
           </svg>
         </button>
-        <div className={styles.dropdownMenu}>
-          <ul role="listbox">
+        <div className={`${styles.dropdownMenu} ${openFilter === "sort" ? styles.active : ""}`}>
+          <ul role="listbox" onClick={handleFilterChange} data-filter="sort">
             <li role="option" data-value="">
               Todas
             </li>

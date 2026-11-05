@@ -1,7 +1,26 @@
 import styles from "./SearchFormSection.module.css";
 import Filters from "./Filters.jsx";
 
+import { useId } from "react";
+
 export default function SearchFormSection() {
+  const idText = useId();
+
+  /*
+  const [selectedFilters, setSelectedFilters] = useState({
+    category: "",
+    price: "",
+    rating: "",
+    sort: "",
+    search: ""
+  });
+  */
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(event.target.search.value);
+  }
+
   return (
     <section className="hero">
       <h1>Encuentra el servicio freelance perfecto ahora mismo</h1>
@@ -11,7 +30,7 @@ export default function SearchFormSection() {
         presupuesto y fecha límite.
       </p>
 
-      <form action="" role="search">
+      <form onSubmit={handleSubmit} action="" role="search">
         <div className={styles.searchBar}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +51,7 @@ export default function SearchFormSection() {
 
           <input
             type="text"
-            name="search"
+            name={idText}
             id="index-search-input"
             placeholder="¿Qué buscas? Ej: Desarrollador web, traductor, etc."
           />
