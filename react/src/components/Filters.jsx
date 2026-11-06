@@ -1,19 +1,9 @@
 import styles from "./Filters.module.css";
-import {useState} from "react";
+import { useState } from "react";
 
-
-export default function Filters() {
+export default function Filters({ onFilterChange }) {
   const [openFilter, setOpenFilter] = useState(null);
-
-  const [selectedFilters, setSelectedFilters] = useState({
-    category: "",
-    price: "",
-    rating: "",
-    sort: "",
-  });
-
   const [filterLabels, setFilterLabels] = useState({});
-
 
   const handleFilterChange = (event) => {
     const filter = event.currentTarget.dataset.filter;
@@ -21,19 +11,16 @@ export default function Filters() {
     const value = option.dataset.value;
     const label = option.textContent;
 
-    setSelectedFilters((prevFilters) => ({
-      ...prevFilters,
-      [filter]: value,
-    }));
+    if (!option) return;
 
     setFilterLabels((prevLabels) => ({
       ...prevLabels,
       [filter]: value === "" ? "" : label,
     }));
 
-    setOpenFilter(null);
+    onFilterChange(filter, value);
 
-    console.log(selectedFilters);
+    setOpenFilter(null);
   };
 
   return (
@@ -63,9 +50,7 @@ export default function Filters() {
             <path d="M4 14h6v6h-6l0 -6" />
             <path d="M14 17a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
           </svg>
-          <p>
-            {filterLabels.category || "Categoría"}
-          </p>
+          <p>{filterLabels.category || "Categoría"}</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -82,8 +67,14 @@ export default function Filters() {
             <path d="M6 9l6 6l6 -6" />
           </svg>
         </button>
-        <div className={`${styles.dropdownMenu} ${openFilter === "category" ? styles.active : ""}`}>
-          <ul role="listbox" onClick={handleFilterChange} data-filter="category">
+        <div
+          className={`${styles.dropdownMenu} ${openFilter === "category" ? styles.active : ""}`}
+        >
+          <ul
+            role="listbox"
+            onClick={handleFilterChange}
+            data-filter="category"
+          >
             <li role="option" data-value="">
               Todas
             </li>
@@ -109,67 +100,12 @@ export default function Filters() {
         </div>
       </div>
 
-      <div className={styles.filterDropdown} data-filter="price">
-        <button 
+      <div className={styles.filterDropdown}>
+        <button
           className={styles.filterBtn}
-          onClick={() => setOpenFilter(openFilter === "price" ? null : "price")}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="icon icon-tabler icons-tabler-outline icon-tabler-currency-dollar"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M16.7 8a3 3 0 0 0 -2.7 -2h-4a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-4a3 3 0 0 1 -2.7 -2" />
-            <path d="M12 3v3m0 12v3" />
-          </svg>
-          <p>
-            {filterLabels.price || "Precio"}
-          </p>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M6 9l6 6l6 -6" />
-          </svg>
-        </button>
-        <div className={`${styles.dropdownMenu} ${openFilter === "price" ? styles.active : ""}`}>
-          <ul role="listbox" onClick={handleFilterChange} data-filter="price">
-            <li role="option" data-value="">
-              Todas
-            </li>
-            <li role="option" data-value="100">
-              Más de $100
-            </li>
-            <li role="option" data-value="500">
-              Más de $500
-            </li>
-            <li role="option" data-value="1000">
-              Más de $1000
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div className={styles.filterDropdown} data-filter="rating">
-        <button className={styles.filterBtn}
-          onClick={() => setOpenFilter(openFilter === "rating" ? null : "rating")}
+          onClick={() =>
+            setOpenFilter(openFilter === "rating" ? null : "rating")
+          }
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -186,9 +122,7 @@ export default function Filters() {
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
             <path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873l-6.158 -3.245" />
           </svg>
-          <p>
-            {filterLabels.rating || "Calificación"}
-          </p>
+          <p>{filterLabels.rating || "Calificación"}</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -205,7 +139,9 @@ export default function Filters() {
             <path d="M6 9l6 6l6 -6" />
           </svg>
         </button>
-        <div className={`${styles.dropdownMenu} ${openFilter === "rating" ? styles.active : ""}`}>
+        <div
+          className={`${styles.dropdownMenu} ${openFilter === "rating" ? styles.active : ""}`}
+        >
           <ul role="listbox" onClick={handleFilterChange} data-filter="rating">
             <li role="option" data-value="">
               Todas
@@ -229,9 +165,12 @@ export default function Filters() {
         </div>
       </div>
 
-      <div className={`${styles.filterDropdown} ${styles.sortDropdown}`} data-filter="sort">
-        <button className={`${styles.filterBtn} ${styles.sortBtn}`}
-          onClick={() => setOpenFilter(openFilter === "sort" ? null : "sort")}
+      <div className={`${styles.filterDropdown} ${styles.sortDropdown}`}>
+        <button
+          className={`${styles.filterBtn} ${styles.sortBtn}`}
+          onClick={() =>
+            setOpenFilter(openFilter === "sortBy" ? null : "sortBy")
+          }
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -256,9 +195,7 @@ export default function Filters() {
             <path d="M4 18l11 0" />
             <path d="M19 18l1 0" />
           </svg>
-          <p>
-            {filterLabels.sort || "Ordenar por"}
-          </p>
+          <p>{filterLabels.sortBy || "Ordenar por"}</p>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -275,19 +212,39 @@ export default function Filters() {
             <path d="M6 9l6 6l6 -6" />
           </svg>
         </button>
-        <div className={`${styles.dropdownMenu} ${openFilter === "sort" ? styles.active : ""}`}>
-          <ul role="listbox" onClick={handleFilterChange} data-filter="sort">
+        <div
+          className={`${styles.dropdownMenu} ${openFilter === "sortBy" ? styles.active : ""}`}
+        >
+          <ul role="listbox" onClick={handleFilterChange} data-filter="sortBy">
             <li role="option" data-value="">
-              Todas
+              Predeterminado
             </li>
+            <hr />
+
+            <li className={styles.dropdownHeading}>Precio</li>
+
+            <li role="option" data-value="price-asc">
+              Menor precio
+            </li>
+
+            <li role="option" data-value="price-desc">
+              Mayor precio
+            </li>
+            <hr />
+
+            <li className={styles.dropdownHeading}>Fecha</li>
             <li role="option" data-value="recent">
               Más recientes
             </li>
+            <hr />
+
+            <li className={styles.dropdownHeading}>Popularidad</li>
+            <li role="option" data-value="best-rated">
+              Mejor valorados
+            </li>
+
             <li role="option" data-value="popular">
               Más populares
-            </li>
-            <li role="option" data-value="rated">
-              Mejor calificados
             </li>
           </ul>
         </div>

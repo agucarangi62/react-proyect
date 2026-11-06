@@ -3,22 +3,17 @@ import Filters from "./Filters.jsx";
 
 import { useId } from "react";
 
-export default function SearchFormSection() {
+export default function SearchFormSection( { onFilterChange, onTextFilter } ) {
   const idText = useId();
 
-  /*
-  const [selectedFilters, setSelectedFilters] = useState({
-    category: "",
-    price: "",
-    rating: "",
-    sort: "",
-    search: ""
-  });
-  */
+  const handleTextChange = (event) => {
+    const text = event.target.value;
+    onTextFilter(text);
+
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(event.target.search.value);
   }
 
   return (
@@ -54,6 +49,7 @@ export default function SearchFormSection() {
             name={idText}
             id="index-search-input"
             placeholder="¿Qué buscas? Ej: Desarrollador web, traductor, etc."
+            onChange={handleTextChange}
           />
 
           <button type="submit">Buscar</button>
@@ -62,7 +58,7 @@ export default function SearchFormSection() {
 
       <div className="container">
         {/* filters */}
-        <Filters />
+        <Filters onFilterChange={onFilterChange}/>
       </div>
     </section>
   );

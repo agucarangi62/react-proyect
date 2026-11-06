@@ -93,3 +93,15 @@
     gap: 8px;
   }
 }
+
+
+.dropdownHeading {
+  padding: 8px 12px 4px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #999;
+  cursor: default;
+  pointer-events: none;
+}

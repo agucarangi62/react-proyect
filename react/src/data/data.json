@@ -9,9 +9,11 @@
     "avatar": "https://randomuser.me/api/portraits/men/3.jpg",
     "data": {
       "category": "technology",
-      "price": "500",
-      "rating": "4.5",
-      "sort": "recent"
+      "price": 5100,
+      "rating": 4.5,
+      "ratingCount": 32,
+      "publishedAt": "2026-10-28T15:30:00.000Z",
+      "completedOrders": 18
     }
   },
   {
@@ -24,9 +26,11 @@
     "avatar": "https://randomuser.me/api/portraits/men/4.jpg",
     "data": {
       "category": "marketing",
-      "price": "300",
-      "rating": "4.8",
-      "sort": "recent"
+      "price": 3400,
+      "rating": 4.8,
+      "ratingCount": 12,
+      "publishedAt": "2026-10-28T10:15:00.000Z",
+      "completedOrders": 8
     }
   },
   {
@@ -39,9 +43,11 @@
     "avatar": "https://randomuser.me/api/portraits/men/5.jpg",
     "data": {
       "category": "marketing",
-      "price": "400",
-      "rating": "4.7",
-      "sort": "popular"
+      "price": 1400,
+      "rating": 4.7,
+      "ratingCount": 25,
+      "publishedAt": "2026-10-28T12:45:00.000Z",
+      "completedOrders": 15
     }
   },
   {
@@ -54,9 +60,11 @@
     "avatar": "https://randomuser.me/api/portraits/men/6.jpg",
     "data": {
       "category": "writing",
-      "price": "250",
-      "rating": "4.6",
-      "sort": "rated"
+      "price": 2450,
+      "rating": 4.6,
+      "ratingCount": 18,
+      "publishedAt": "2026-10-28T14:20:00.000Z",
+      "completedOrders": 12
     }
   },
   {
@@ -69,9 +77,11 @@
     "avatar": "https://randomuser.me/api/portraits/women/7.jpg",
     "data": {
       "category": "technology",
-      "price": "600",
-      "rating": "4.9",
-      "sort": "popular"
+      "price": 6200,
+      "rating": 4.9,
+      "ratingCount": 22,
+      "publishedAt": "2026-10-28T16:45:00.000Z",
+      "completedOrders": 14
     }
   },
   {
@@ -84,9 +94,11 @@
     "avatar": "https://randomuser.me/api/portraits/women/3.jpg",
     "data": {
       "category": "business",
-      "price": "450",
-      "rating": "4.7",
-      "sort": "popular"
+      "price": 4450,
+      "rating": 4.7,
+      "ratingCount": 20,
+      "publishedAt": "2026-10-28T18:30:00.000Z",
+      "completedOrders": 10
     }
   },
   {
@@ -99,9 +111,11 @@
     "avatar": "https://randomuser.me/api/portraits/women/12.jpg",
     "data": {
       "category": "ia",
-      "price": "700",
-      "rating": "4.9",
-      "sort": "recent"
+      "price": 7600,
+      "rating": 4.9,
+      "ratingCount": 25,
+      "publishedAt": "2026-10-28T20:15:00.000Z",
+      "completedOrders": 16
     }
   },
   {
@@ -114,9 +128,11 @@
     "avatar": "https://randomuser.me/api/portraits/men/13.jpg",
     "data": {
       "category": "technology",
-      "price": "550",
-      "rating": "4.8",
-      "sort": "popular"
+      "price": 5520,
+      "rating": 4.8,
+      "ratingCount": 21,
+      "publishedAt": "2026-10-28T22:00:00.000Z",
+      "completedOrders": 13
     }
   },
   {
@@ -129,9 +145,11 @@
     "avatar": "https://randomuser.me/api/portraits/men/24.jpg",
     "data": {
       "category": "technology",
-      "price": "500",
-      "rating": "4.7",
-      "sort": "rated"
+      "price": 5010,
+      "rating": 4.7,
+      "ratingCount": 18,
+      "publishedAt": "2026-10-29T00:45:00.000Z",
+      "completedOrders": 11
     }
   },
   {
@@ -144,9 +162,11 @@
     "avatar": "https://randomuser.me/api/portraits/women/23.jpg",
     "data": {
       "category": "marketing",
-      "price": "600",
-      "rating": "4.8",
-      "sort": "rated"
+      "price": 6010,
+      "rating": 4.8,
+      "ratingCount": 20,
+      "publishedAt": "2026-10-29T02:30:00.000Z",
+      "completedOrders": 14
     }
   },
   {
@@ -159,9 +179,11 @@
     "avatar": "https://randomuser.me/api/portraits/men/24.jpg",
     "data": {
       "category": "design",
-      "price": "550",
-      "rating": "4.9",
-      "sort": "popular"
+      "price": 1550,
+      "rating": 4.9,
+      "ratingCount": 19,
+      "publishedAt": "2026-10-29T04:15:00.000Z",
+      "completedOrders": 12
     }
   },
   {
@@ -174,9 +196,11 @@
     "avatar": "https://randomuser.me/api/portraits/men/24.jpg",
     "data": {
       "category": "design",
-      "price": "550",
-      "rating": "4.9",
-      "sort": "popular"
+      "price": 2550,
+      "rating": 4.9,
+      "ratingCount": 19,
+      "publishedAt": "2026-10-29T06:00:00.000Z",
+      "completedOrders": 15
     }
   },
   {
@@ -189,9 +213,11 @@
     "avatar": "https://randomuser.me/api/portraits/women/23.jpg",
     "data": {
       "category": "marketing",
-      "price": "600",
-      "rating": "4.8",
-      "sort": "rated"
+      "price": 1600,
+      "rating": 4.8,
+      "ratingCount": 20,
+      "publishedAt": "2026-10-29T07:45:00.000Z",
+      "completedOrders": 13
     }
   },
   {
@@ -204,9 +230,11 @@
     "avatar": "https://randomuser.me/api/portraits/men/3.jpg",
     "data": {
       "category": "technology",
-      "price": "500",
-      "rating": "4.5",
-      "sort": "recent"
+      "price": 1500,
+      "rating": 4.5,
+      "ratingCount": 32,
+      "publishedAt": "2026-10-28T15:30:00.000Z",
+      "completedOrders": 50
     }
   },
   {
@@ -219,9 +247,11 @@
     "avatar": "https://randomuser.me/api/portraits/men/4.jpg",
     "data": {
       "category": "marketing",
-      "price": "300",
-      "rating": "4.8",
-      "sort": "recent"
+      "price": 300,
+      "rating": 4.8,
+      "ratingCount": 25,
+      "publishedAt": "2026-10-28T16:15:00.000Z",
+      "completedOrders": 40
     }
   },
   {
@@ -234,9 +264,11 @@
     "avatar": "https://randomuser.me/api/portraits/men/5.jpg",
     "data": {
       "category": "marketing",
-      "price": "400",
-      "rating": "4.7",
-      "sort": "popular"
+      "price": 400,
+      "rating": 4.7,
+      "ratingCount": 25,
+      "publishedAt": "2026-10-28T12:45:00.000Z",
+      "completedOrders": 15
     }
   },
   {
@@ -249,9 +281,11 @@
     "avatar": "https://randomuser.me/api/portraits/men/6.jpg",
     "data": {
       "category": "writing",
-      "price": "250",
-      "rating": "4.6",
-      "sort": "rated"
+      "price": 250,
+      "rating": 4.6,
+      "ratingCount": 18,
+      "publishedAt": "2026-10-28T14:30:00.000Z",
+      "completedOrders": 30
     }
   },
   {
@@ -264,9 +298,11 @@
     "avatar": "https://randomuser.me/api/portraits/women/7.jpg",
     "data": {
       "category": "technology",
-      "price": "600",
-      "rating": "4.9",
-      "sort": "popular"
+      "price": 600,
+      "rating": 4.9,
+      "ratingCount": 22,
+      "publishedAt": "2026-10-28T16:45:00.000Z",
+      "completedOrders": 45
     }
   },
   {
@@ -279,9 +315,11 @@
     "avatar": "https://randomuser.me/api/portraits/women/3.jpg",
     "data": {
       "category": "business",
-      "price": "450",
-      "rating": "4.7",
-      "sort": "popular"
+      "price": 450,
+      "rating": 4.7,
+      "ratingCount": 20,
+      "publishedAt": "2026-10-28T18:15:00.000Z",      
+      "completedOrders": 25
     }
   },
   {
@@ -294,9 +332,11 @@
     "avatar": "https://randomuser.me/api/portraits/women/12.jpg",
     "data": {
       "category": "ia",
-      "price": "700",
-      "rating": "4.9",
-      "sort": "recent"
+      "price": 700,
+      "rating": 4.9,
+      "ratingCount": 25,
+      "publishedAt": "2026-10-28T20:15:00.000Z",
+      "completedOrders": 16
     }
   },
   {
@@ -309,9 +349,11 @@
     "avatar": "https://randomuser.me/api/portraits/men/13.jpg",
     "data": {
       "category": "technology",
-      "price": "550",
-      "rating": "4.8",
-      "sort": "popular"
+      "price": 550,
+      "rating": 4.8,
+      "ratingCount": 21,
+      "publishedAt": "2026-10-28T22:30:00.000Z",
+      "completedOrders": 13
     }
   },
   {
@@ -324,24 +366,11 @@
     "avatar": "https://randomuser.me/api/portraits/men/24.jpg",
     "data": {
       "category": "technology",
-      "price": "500",
-      "rating": "4.7",
-      "sort": "rated"
-    }
-  },
-  {
-    "id": "j0k1l2m3-4n5o-6p7q-8r9s-0t1u2v3w4x5y3",
-    "title": "Especialista en Análisis de Datos",
-    "freelancer": "Carla Espisona",
-    "ubicacion": "Toronto, Canadá",
-    "description": "Analizar grandes conjuntos de datos para extraer información valiosa y tomar decisiones informadas. Se requiere experiencia en análisis de datos y conocimiento de herramientas de visualización.",
-    "image": "https://fastly.picsum.photos/id/659/2731/1536.jpg?hmac=jwFueQ8WaCS2sR6LVKFGQ3-emm0_HqHEOhQDt8AzHyQ",
-    "avatar": "https://randomuser.me/api/portraits/women/23.jpg",
-    "data": {
-      "category": "marketing",
-      "price": "600",
-      "rating": "4.8",
-      "sort": "rated"
+      "price": 500,
+      "rating": 4.7,
+      "ratingCount": 18,
+      "publishedAt": "2026-10-29T00:45:00.000Z",
+      "completedOrders": 11
     }
   },
   {
@@ -354,9 +383,11 @@
     "avatar": "https://randomuser.me/api/portraits/men/24.jpg",
     "data": {
       "category": "design",
-      "price": "550",
-      "rating": "4.9",
-      "sort": "popular"
+      "price": 550,
+      "rating": 4.9,
+      "ratingCount": 19,
+      "publishedAt": "2026-10-29T04:15:00.000Z",
+      "completedOrders": 12
     }
   },
   {
@@ -369,9 +400,11 @@
     "avatar": "https://randomuser.me/api/portraits/men/24.jpg",
     "data": {
       "category": "design",
-      "price": "550",
-      "rating": "4.9",
-      "sort": "popular"
+      "price": 550,
+      "rating": 4.9,
+      "ratingCount": 19,
+      "publishedAt": "2026-10-29T06:15:00.000Z",
+      "completedOrders": 16
     }
   },
   {
@@ -384,9 +417,11 @@
     "avatar": "https://randomuser.me/api/portraits/women/23.jpg",
     "data": {
       "category": "marketing",
-      "price": "600",
-      "rating": "4.8",
-      "sort": "rated"
+      "price": 600,
+      "rating": 4.8,
+      "ratingCount": 20,
+      "publishedAt": "2026-10-29T08:30:00.000Z",
+      "completedOrders": 14
     }
   }
 
