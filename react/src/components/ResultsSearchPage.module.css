@@ -1,0 +1,196 @@
+.resultsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.75rem;
+
+  p {
+    color: var(--text-muted);
+  }
+
+  select {
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    border-color: var(--border);
+    background: var(--background-secondary);
+    color: var(--primary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  select:hover {
+    border-color: var(--primary-light);
+    color: var(--text-primary);
+  }
+}
+
+@media (max-width: 768px) {
+  .resultsHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+
+.searchServices {
+  display: grid;
+  padding: 0rem 1.75rem;
+
+  grid-template-columns: repeat(auto-fill, minmax(250px, 360px));
+  gap: 1rem;
+  justify-content: center;
+}
+
+.serviceCard {
+  display: flex;
+  flex-direction: column;
+  background: var(--background-secondary);
+  border-radius: 12px;
+  overflow: hidden;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.serviceCard:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+.cardHeader {
+  position: relative;
+  padding: 0;
+}
+
+.cardImage {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.cardBody {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cardSeller {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.cardSeller img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.cardSeller span {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  transition: color 0.2s ease;
+}
+
+.cardDescription {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+
+.cardSeller {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.cardSeller img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.cardSeller span {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.cardRating {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  margin-top: 0.75rem;
+  color: #f59e0b;
+}
+
+.cardSearchFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem;
+  border-top: 1px solid #ececec;
+
+  p {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  span {
+    font-size: 16px;
+    color: var(--text-primary);
+  }
+}
+
+.favFooterBtn {
+  background: transparent;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.favFooterBtn:hover {
+  color: var(--primary-light);
+}
+
+
+/*BOTON DE PRUEBA*/
+.btnAdd {
+  background: var(--background-primary);
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 0.5rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &.isApplied{
+    background: #4caf4fab;
+    color: var(--text-secondary);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}

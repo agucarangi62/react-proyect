@@ -1,7 +1,9 @@
+import styles from "./MobileFiltersSearchPage.module.css";
+
 export default function MobileFiltersSearchPage() {
   return (
-    <div className="mobile-filters">
-      <button className="filter-toggle">
+    <div className={styles.mobileFilters}>
+      <button className={styles.filterToggle}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -9,9 +11,9 @@ export default function MobileFiltersSearchPage() {
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="1"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className="icon icon-tabler icons-tabler-outline icon-tabler-filter"
         >
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />

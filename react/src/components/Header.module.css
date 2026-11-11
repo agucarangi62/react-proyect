@@ -28,6 +28,11 @@
     font-weight: 700;
     color: var(--text-primary);
   }
+
+  a {
+    text-decoration: none;
+    color: var(--text-primary);
+  }
 }
 
 /* Nav bar*/
@@ -49,6 +54,7 @@
     }
   }
 }
+
 
 /* Header buttons */
 .headerActions a {

@@ -1,10 +1,12 @@
+import styles from "./ResultsSearchPage.module.css";
+
 export default function ResultsSearchPage() {
   return (
     <section className="results">
-      <div className="results-header">
+      <div className={styles.resultsHeader}>
         <p>Resultados 1-12 de 1200</p>
         <div className="sort">
-          <label for="sort">Ordenar por:</label>
+          <label >Ordenar por:</label>
 
           <select id="sort" name="sort">
             <option value="recommended">Recomendados</option>
@@ -14,11 +16,11 @@ export default function ResultsSearchPage() {
         </div>
       </div>
 
-      <div className="search-services">
+      <div className={styles.searchServices}>
         {/* Cards */}
-        <article className="service-card">
-          <header className="card-header">
-            <div className="card-image">
+        <article className={styles.serviceCard}>
+          <header className={styles.cardHeader}>
+            <div className={styles.cardImage}>
               <img
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcq__tFWuWUiuRWGvRRtGeKJTYeJn8tkHWGYq6qwXO0q7vwensRSqbaLjYQbIv5Vu8cEp5BYbwA3R1atgRIIWYIkp6jdJ04jkJfHBerwkg2bhKO8-N8LfEWEkXdmjlhsBjLc5nlpOLokf2UbY6_6h2nEVQvKXXTV34PGi3Ifhr7nbw2WzF8xgj9gpAdbCecZw-NQ4DWr9wflpBzAu4YDv_rfjWy7YXiaQHKOcXUZofYxC5bAEi-j0OlaCrUCuq5Lsn8sLdQjQk6A"
                 alt=""
@@ -26,8 +28,8 @@ export default function ResultsSearchPage() {
             </div>
           </header>
 
-          <div className="card-body">
-            <div className="card-seller">
+          <div className={styles.cardBody}>
+            <div className={styles.cardSeller}>
               <img
                 alt="Samantha Lee's avatar"
                 className="w-6 h-6 rounded-full"
@@ -36,19 +38,21 @@ export default function ResultsSearchPage() {
               <p>Samantha Lee</p>
             </div>
 
-            <p className="card-title">
+            <p className={styles.cardTitle}>
               I will create a modern minimalist logo design
             </p>
 
-            <div className="card-rating">
+            <p className={styles.cardDescription}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus assumenda quibusdam illum eaque reprehenderit, maiores dolore provident, beatae tenetur, officiis animi excepturi! Tempore sint placeat debitis dolorum, itaque quasi nesciunt?</p>
+
+            <div className={styles.cardRating}>
               <span>★</span>
               <strong>4.9</strong>
               <p>(245)</p>
             </div>
           </div>
 
-          <footer className="card-search-footer">
-            <button className="fav-footer-btn">
+          <footer className={styles.cardSearchFooter}>
+            <button className={styles.favFooterBtn}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -56,9 +60,9 @@ export default function ResultsSearchPage() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="icon icon-tabler icons-tabler-outline icon-tabler-heart"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -66,7 +70,7 @@ export default function ResultsSearchPage() {
               </svg>
             </button>
 
-            <button className="fav-footer-btn btn-add">Agregar</button>
+            <button className={`${styles.favFooterBtn} ${styles.btnAdd}`}>Agregar</button>
 
             <p>
               From <span>$50</span>
@@ -74,9 +78,9 @@ export default function ResultsSearchPage() {
           </footer>
         </article>
 
-        <article className="service-card">
-          <header className="card-header">
-            <div className="card-image">
+        <article className={styles.serviceCard}>
+          <header className={styles.cardHeader}>
+            <div className={styles.cardImage}>
               <img
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcq__tFWuWUiuRWGvRRtGeKJTYeJn8tkHWGYq6qwXO0q7vwensRSqbaLjYQbIv5Vu8cEp5BYbwA3R1atgRIIWYIkp6jdJ04jkJfHBerwkg2bhKO8-N8LfEWEkXdmjlhsBjLc5nlpOLokf2UbY6_6h2nEVQvKXXTV34PGi3Ifhr7nbw2WzF8xgj9gpAdbCecZw-NQ4DWr9wflpBzAu4YDv_rfjWy7YXiaQHKOcXUZofYxC5bAEi-j0OlaCrUCuq5Lsn8sLdQjQk6A"
                 alt=""
@@ -84,8 +88,8 @@ export default function ResultsSearchPage() {
             </div>
           </header>
 
-          <div className="card-body">
-            <div className="card-seller">
+          <div className={styles.cardBody}>
+            <div className={styles.cardSeller}>
               <img
                 alt="Samantha Lee's avatar"
                 className="w-6 h-6 rounded-full"
@@ -94,19 +98,21 @@ export default function ResultsSearchPage() {
               <p>Samantha Lee</p>
             </div>
 
-            <p className="card-title">
+            <p className={styles.cardTitle}>
               I will create a modern minimalist logo design
             </p>
 
-            <div className="card-rating">
+            <p className={styles.cardDescription}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus assumenda quibusdam illum eaque reprehenderit, maiores dolore provident, beatae tenetur, officiis animi excepturi! Tempore sint placeat debitis dolorum, itaque quasi nesciunt?</p>
+
+            <div className={styles.cardRating}>
               <span>★</span>
               <strong>4.9</strong>
               <p>(245)</p>
             </div>
           </div>
 
-          <footer className="card-search-footer">
-            <button className="fav-footer-btn">
+          <footer className={styles.cardSearchFooter}>
+            <button className={styles.favFooterBtn}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -114,9 +120,9 @@ export default function ResultsSearchPage() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="icon icon-tabler icons-tabler-outline icon-tabler-heart"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -124,7 +130,7 @@ export default function ResultsSearchPage() {
               </svg>
             </button>
 
-            <button className="fav-footer-btn btn-add">Agregar</button>
+            <button className={`${styles.favFooterBtn} ${styles.btnAdd}`}>Agregar</button>
 
             <p>
               From <span>$50</span>
@@ -132,9 +138,9 @@ export default function ResultsSearchPage() {
           </footer>
         </article>
 
-        <article className="service-card">
-          <header className="card-header">
-            <div className="card-image">
+        <article className={styles.serviceCard}>
+          <header className={styles.cardHeader}>
+            <div className={styles.cardImage}>
               <img
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcq__tFWuWUiuRWGvRRtGeKJTYeJn8tkHWGYq6qwXO0q7vwensRSqbaLjYQbIv5Vu8cEp5BYbwA3R1atgRIIWYIkp6jdJ04jkJfHBerwkg2bhKO8-N8LfEWEkXdmjlhsBjLc5nlpOLokf2UbY6_6h2nEVQvKXXTV34PGi3Ifhr7nbw2WzF8xgj9gpAdbCecZw-NQ4DWr9wflpBzAu4YDv_rfjWy7YXiaQHKOcXUZofYxC5bAEi-j0OlaCrUCuq5Lsn8sLdQjQk6A"
                 alt=""
@@ -142,8 +148,8 @@ export default function ResultsSearchPage() {
             </div>
           </header>
 
-          <div className="card-body">
-            <div className="card-seller">
+          <div className={styles.cardBody}>
+            <div className={styles.cardSeller}>
               <img
                 alt="Samantha Lee's avatar"
                 className="w-6 h-6 rounded-full"
@@ -152,19 +158,21 @@ export default function ResultsSearchPage() {
               <p>Samantha Lee</p>
             </div>
 
-            <p className="card-title">
+            <p className={styles.cardTitle}>
               I will create a modern minimalist logo design
             </p>
 
-            <div className="card-rating">
+            <p className={styles.cardDescription}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus assumenda quibusdam illum eaque reprehenderit, maiores dolore provident, beatae tenetur, officiis animi excepturi! Tempore sint placeat debitis dolorum, itaque quasi nesciunt?</p>
+
+            <div className={styles.cardRating}>
               <span>★</span>
               <strong>4.9</strong>
               <p>(245)</p>
             </div>
           </div>
 
-          <footer className="card-search-footer">
-            <button className="fav-footer-btn">
+          <footer className={styles.cardSearchFooter}>
+            <button className={styles.favFooterBtn}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -172,9 +180,9 @@ export default function ResultsSearchPage() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="icon icon-tabler icons-tabler-outline icon-tabler-heart"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -182,7 +190,7 @@ export default function ResultsSearchPage() {
               </svg>
             </button>
 
-            <button className="fav-footer-btn btn-add">Agregar</button>
+            <button className={`${styles.favFooterBtn} ${styles.btnAdd}`}>Agregar</button>
 
             <p>
               From <span>$50</span>
@@ -190,9 +198,9 @@ export default function ResultsSearchPage() {
           </footer>
         </article>
 
-        <article className="service-card">
-          <header className="card-header">
-            <div className="card-image">
+        <article className={styles.serviceCard}>
+          <header className={styles.cardHeader}>
+            <div className={styles.cardImage}>
               <img
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcq__tFWuWUiuRWGvRRtGeKJTYeJn8tkHWGYq6qwXO0q7vwensRSqbaLjYQbIv5Vu8cEp5BYbwA3R1atgRIIWYIkp6jdJ04jkJfHBerwkg2bhKO8-N8LfEWEkXdmjlhsBjLc5nlpOLokf2UbY6_6h2nEVQvKXXTV34PGi3Ifhr7nbw2WzF8xgj9gpAdbCecZw-NQ4DWr9wflpBzAu4YDv_rfjWy7YXiaQHKOcXUZofYxC5bAEi-j0OlaCrUCuq5Lsn8sLdQjQk6A"
                 alt=""
@@ -200,8 +208,8 @@ export default function ResultsSearchPage() {
             </div>
           </header>
 
-          <div className="card-body">
-            <div className="card-seller">
+          <div className={styles.cardBody}>
+            <div className={styles.cardSeller}>
               <img
                 alt="Samantha Lee's avatar"
                 className="w-6 h-6 rounded-full"
@@ -210,19 +218,21 @@ export default function ResultsSearchPage() {
               <p>Samantha Lee</p>
             </div>
 
-            <p className="card-title">
+            <p className={styles.cardTitle}>
               I will create a modern minimalist logo design
             </p>
 
-            <div className="card-rating">
+            <p className={styles.cardDescription}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus assumenda quibusdam illum eaque reprehenderit, maiores dolore provident, beatae tenetur, officiis animi excepturi! Tempore sint placeat debitis dolorum, itaque quasi nesciunt?</p>
+
+            <div className={styles.cardRating}>
               <span>★</span>
               <strong>4.9</strong>
               <p>(245)</p>
             </div>
           </div>
 
-          <footer className="card-search-footer">
-            <button className="fav-footer-btn">
+          <footer className={styles.cardSearchFooter}>
+            <button className={styles.favFooterBtn}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -230,22 +240,25 @@ export default function ResultsSearchPage() {
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 className="icon icon-tabler icons-tabler-outline icon-tabler-heart"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
               </svg>
-
-              <button className="fav-footer-btn btn-add">Agregar</button>
             </button>
+
+            <button className={`${styles.favFooterBtn} ${styles.btnAdd}`}>Agregar</button>
+
             <p>
               From <span>$50</span>
             </p>
           </footer>
         </article>
+
+        
       </div>
     </section>
   );

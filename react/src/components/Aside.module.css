@@ -1,0 +1,182 @@
+/* Aside */
+.filtersClose {
+  display: none;
+}
+
+/* FILTERS SIDEBAR */
+.filtersAside {
+  width: 100%;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  background: var(--background-secondary);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  height: fit-content;
+}
+
+.filtersTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.filtersForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+@media (max-width: 992px) {
+  .filtersClose {
+    display: block;
+
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    background: none;
+    border: none;
+
+    font-size: 2rem;
+    cursor: pointer;
+
+    color: var(--text-primary);
+  }
+
+  .filtersAside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    max-width: 85vw;
+    height: 100vh;
+    margin: 0;
+    border-radius: 0;
+    overflow-y: auto;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .filtersAside.open {
+    transform: translateX(0);
+  }
+}
+
+
+
+/* ACCORDION */
+.filterGroup {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+.filterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+
+  font-weight: 600;
+}
+
+.filterHeader::-webkit-details-marker {
+  display: none;
+}
+
+.filterContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.chevron {
+  transition: transform 0.25s ease;
+}
+
+.filterGroup[open] .chevron {
+  transform: rotate(180deg);
+}
+
+
+/* CHECKBOXES */
+.checkboxOption {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.checkboxOption input {
+  cursor: pointer;
+}
+
+/* RANGE */
+.filterContent input[type="range"] {
+  width: 100%;
+}
+
+.priceValues {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+/* SELECT */
+.filterContent select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--background-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+
+/* BUTTONS */
+.filterActions {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.75rem;
+
+  margin-top: 1rem;
+}
+
+.btnPrimary {
+  padding: 0.8rem;
+
+  border: none;
+  border-radius: 10px;
+
+  background: var(--primary-light);
+  color: var(--text-secondary);
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.btnPrimary:hover {
+  background: var(--primary-hover);
+}
+
+.btnSecondary {
+  border: none;
+  background: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btnSecondary:hover {
+  color: var(--primary);
+}

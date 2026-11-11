@@ -1,15 +1,17 @@
+import styles from "./Aside.module.css";
+
 export default function Aside() {
   return (
-    <aside className="filters-aside">
-      <button className="filters-close" type="button">
+    <aside className={styles.filtersAside}>
+      <button className={styles.filtersClose} type="button">
         ✕
       </button>
-      <h2 className="filters-title">Filtros</h2>
+      <h2 className={styles.filtersTitle}>Filtros</h2>
 
-      <form className="filters-form">
+      <form className={styles.filtersForm}>
         {/* Category */}
-        <details className="filter-group" open>
-          <summary className="filter-header">
+        <details className={styles.filterGroup} open>
+          <summary className={styles.filterHeader}>
             <span>Categoria</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -21,30 +23,30 @@ export default function Aside() {
               strokeWidth="1"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down chevron"
+              className={`icon icon-tabler icons-tabler-outline icon-tabler-chevron-down ${styles.chevron}`}
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M6 9l6 6l6 -6" />
             </svg>
           </summary>
 
-          <div className="filter-content">
-            <label className="checkbox-option">
+          <div className={styles.filterContent}>
+            <label className={styles.checkboxOption}>
               <input type="checkbox" checked />
               <span>Web Design</span>
             </label>
 
-            <label className="checkbox-option">
+            <label className={styles.checkboxOption}>
               <input type="checkbox" />
               <span>Copywriting</span>
             </label>
 
-            <label className="checkbox-option">
+            <label className={styles.checkboxOption}>
               <input type="checkbox" />
               <span>Logo Design</span>
             </label>
 
-            <label className="checkbox-option">
+            <label className={styles.checkboxOption}>
               <input type="checkbox" />
               <span>Video Editing</span>
             </label>
@@ -52,8 +54,8 @@ export default function Aside() {
         </details>
 
         {/* Price */}
-        <details className="filter-group" open>
-          <summary className="filter-header">
+        <details className={styles.filterGroup} open>
+          <summary className={styles.filterHeader}>
             <span>Rango de precios</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -65,17 +67,17 @@ export default function Aside() {
               strokeWidth="1"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down chevron"
+              className={`icon icon-tabler icons-tabler-outline icon-tabler-chevron-down ${styles.chevron}`}
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M6 9l6 6l6 -6" />
             </svg>
           </summary>
 
-          <div className="filter-content">
+          <div className={styles.filterContent}>
             <input type="range" />
 
-            <div className="price-values">
+            <div className={styles.priceValues}>
               <span>$5</span>
               <span>$1000+</span>
             </div>
@@ -83,8 +85,8 @@ export default function Aside() {
         </details>
 
         {/* Rate */}
-        <details className="filter-group">
-          <summary className="filter-header">
+        <details className={styles.filterGroup}>
+          <summary className={styles.filterHeader}>
             <span>Rate</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -96,20 +98,20 @@ export default function Aside() {
               strokeWidth="1"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down chevron"
+              className={`icon icon-tabler icons-tabler-outline icon-tabler-chevron-down ${styles.chevron}`}
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M6 9l6 6l6 -6" />
             </svg>
           </summary>
 
-          <div className="filter-content">
-            <label className="checkbox-option">
+          <div className={styles.filterContent}>
+            <label className={styles.checkboxOption}>
               <input type="checkbox" />
               <span>★ 4 Estrellas o mas</span>
             </label>
 
-            <label className="checkbox-option">
+            <label className={styles.checkboxOption}>
               <input type="checkbox" />
               <span>★ 3 Estrellas o mas</span>
             </label>
@@ -117,8 +119,8 @@ export default function Aside() {
         </details>
 
         {/* Delivery time */}
-        <details className="filter-group">
-          <summary className="filter-header">
+        <details className={styles.filterGroup}>
+          <summary className={styles.filterHeader}>
             <span>Tiempo de entrega</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -130,14 +132,14 @@ export default function Aside() {
               strokeWidth="1"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down chevron"
+              className={`icon icon-tabler icons-tabler-outline icon-tabler-chevron-down ${styles.chevron}`}
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M6 9l6 6l6 -6" />
             </svg>
           </summary>
 
-          <div className="filter-content">
+          <div className={styles.filterContent}>
             <select>
               <option>Cualquiera</option>
               <option>En menos de 24 horas</option>
@@ -148,8 +150,8 @@ export default function Aside() {
         </details>
 
         {/* Language */}
-        <details className="filter-group">
-          <summary className="filter-header">
+        <details className={styles.filterGroup}>
+          <summary className={styles.filterHeader}>
             <span>Idioma</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -161,14 +163,14 @@ export default function Aside() {
               strokeWidth="1"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down chevron"
+              className={`icon icon-tabler icons-tabler-outline icon-tabler-chevron-down ${styles.chevron}`}
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M6 9l6 6l6 -6" />
             </svg>
           </summary>
 
-          <div className="filter-content">
+          <div className={styles.filterContent}>
             <select>
               <option>Cualquiera</option>
               <option>Español</option>
@@ -179,11 +181,11 @@ export default function Aside() {
           </div>
         </details>
 
-        <div className="filter-actions">
-          <button className="btn-primary" type="submit">
+        <div className={styles.filterActions}>
+          <button className={styles.btnPrimary} type="submit">
             Aplicar
           </button>
-          <button className="btn-secondary" type="reset">
+          <button className={styles.btnSecondary} type="reset">
             Limpiar
           </button>
         </div>

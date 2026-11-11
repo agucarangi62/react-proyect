@@ -1,0 +1,30 @@
+/* Mobile filters */
+
+.mobileFilters {
+  display: none;
+}
+
+.filterToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--background-secondary);
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: var(--secondary-hover);
+  }
+}
+
+@media (max-width: 992px) {
+  .mobileFilters {
+    display: block;
+    padding: 0 1.75rem 1rem;
+  }
+
+}
