@@ -37,9 +37,6 @@
 
 /* FAVORITE BUTTON */
 .favBtn {
-  position: absolute;
-  top: 12px;
-  right: 12px;
   background: var(--background);
   backdrop-filter: blur(6px);
   border: none;
@@ -88,16 +85,11 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: auto;
-
+  margin-bottom: 12px;
+  
   p {
     font-size: 14px;
     color: var(--primary);
-  }
-
-  span {
-    color: #f59e0b;
-    font-weight: 500;
   }
 
   img {
@@ -107,13 +99,27 @@
   }
 }
 
-
+/* CARD RATING */
+.cardRating {
+  margin: auto 12px 0 0;
+}
+.cardRating span {
+  color: #f59e0b;
+  font-size: 1rem;
+}
+.cardRating p {
+  color: #f59e0b;
+  font-weight: 400;
+  font-size: 1rem;
+}
 
 /* CARD FOOTER */
 .cardFooter {
   padding: 12px 16px;
   border-top: 1px solid #e5e7eb;
-  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   p {
     font-size: 13px;

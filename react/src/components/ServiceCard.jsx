@@ -20,7 +20,28 @@ export default function ServiceCard({
         <div className={styles.cardImage}>
           <img src={image} alt="" />
         </div>
-
+      </header>
+      <div className={styles.cardBody}>
+        <div className={styles.cardAuthor}>
+          <img
+            alt={`${freelancer}'s profile picture`}
+            className="w-6 h-6 rounded-full"
+            src={avatar}
+          />
+          <p>{freelancer}</p>
+        </div>
+        <p className={styles.cardTitle}>{title}</p>
+        <p className={styles.cardDescription}>{description}</p>
+        <div className={styles.cardRating}>
+          <p>
+            <span>
+              ★ <strong>{data.rating}</strong>
+            </span>{" "}
+            ({data.ratingCount})
+          </p>
+        </div>
+      </div>
+      <footer className={styles.cardFooter}>
         <button className={styles.favBtn}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -38,22 +59,6 @@ export default function ServiceCard({
             <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
           </svg>
         </button>
-      </header>
-      <div className={styles.cardBody}>
-        <p className={styles.cardTitle}>{title}</p>
-        <p className={styles.cardDescription}>{description}</p>
-        <div className={styles.cardAuthor}>
-          <img
-            alt={`${freelancer}'s profile picture`}
-            className="w-6 h-6 rounded-full"
-            src={avatar}
-          />
-          <p>
-            {freelancer} <span>★ {data.rating}</span>
-          </p>
-        </div>
-      </div>
-      <footer className={styles.cardFooter}>
         <p>
           Desde <span>${data.price}</span>
         </p>

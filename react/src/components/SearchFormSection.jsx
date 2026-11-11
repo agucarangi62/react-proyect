@@ -19,11 +19,10 @@ export default function SearchFormSection({ onFilterChange, onTextFilter }) {
     <>
       <section className={`hero  ${styles.heroBackground}`}>
         <div className={styles.heroContent}>
-          <h1>Encuentra el servicio freelance perfecto ahora mismo</h1>
+          <h1>Tus ideas merecen grandes profesionales.</h1>
 
           <p>
-            Descubra un mundo de talentos de primer nivel para cualquier
-            proyecto, presupuesto y fecha límite.
+            Conectá con freelancers de distintas áreas y encontrá el talento que necesitás para hacerlas realidad.
           </p>
 
           <form onSubmit={handleSubmit} action="" role="search">
