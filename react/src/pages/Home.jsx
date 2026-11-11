@@ -98,11 +98,11 @@ export function HomePage() {
     <>
       <MobileMenu />
 
+      <SearchFormSection
+        onFilterChange={handleFilterChange}
+        onTextFilter={handleTextFilter}
+      />
       <main className="container">
-        <SearchFormSection
-          onFilterChange={handleFilterChange}
-          onTextFilter={handleTextFilter}
-        />
         {/* Popular Services */}
         <section>
           <div className="popular-services">
