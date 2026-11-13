@@ -1,12 +1,22 @@
 import styles from "./SearchFormSection.module.css";
 import styles2 from "./SearchFormSectionSearch.module.css";
 
-export default function SearchFormSectionSearch() {
+export default function SearchFormSectionSearch({ onTextFilter }) {
+  const handleTextChange = (event) => {
+    onTextFilter(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
+
+
   return (
     <section className={styles2.searchHeader}>
       <h1>Explora los servicios de la comunidad</h1>
       <p>Encuentra el servicio freelance perfecto ahora mismo</p>
-      <form action="" role="search">
+      <form onSubmit={handleSubmit} role="search">
         <div className={styles.searchBar}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -30,6 +40,7 @@ export default function SearchFormSectionSearch() {
             name=""
             id=""
             placeholder="¿Qué buscas? Ej: Desarrollador web, traductor, etc."
+            onChange={handleTextChange}
           />
           <button type="submit">Buscar</button>
         </div>

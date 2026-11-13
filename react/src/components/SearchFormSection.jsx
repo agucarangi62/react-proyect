@@ -1,9 +1,8 @@
 import styles from "./SearchFormSection.module.css";
-import Filters from "./Filters.jsx";
 
 import { useId } from "react";
 
-export default function SearchFormSection({ onFilterChange, onTextFilter }) {
+export default function SearchFormSection({ onTextFilter }) {
   const idText = useId();
 
   const handleTextChange = (event) => {
@@ -57,10 +56,7 @@ export default function SearchFormSection({ onFilterChange, onTextFilter }) {
           </form>
         </div>
       </section>
-      <div className="container">
-        {/* filters */}
-        <Filters onFilterChange={onFilterChange} />
-      </div>
+      
     </>
   );
 }
