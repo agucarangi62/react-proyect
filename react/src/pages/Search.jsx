@@ -6,7 +6,7 @@ import SearchFormSectionSearch from "../components/SearchFormSectionSearch.jsx";
 
 import getServices from "../services/serviceService.js";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function SearchPage() {
   const services = getServices();
@@ -131,8 +131,6 @@ export function SearchPage() {
     });
   };
 
-  const startResult = servicesSorted.length === 0 ? 0 : (currentPage - 1) * RESULT_PER_PAGE + 1;
-
   const endResult = Math.min(
     currentPage * RESULT_PER_PAGE,
     servicesSorted.length,
@@ -141,7 +139,13 @@ export function SearchPage() {
   const resultLabel =
     servicesSorted.length === 0
       ? "0 resultados"
-      : `Resultados ${startResult}-${endResult} de ${servicesSorted.length}`;
+      : `Resultados ${endResult} de ${servicesSorted.length}`;
+
+      
+  const servicesCount = servicesSorted.length;
+  useEffect(() => {
+    document.title = `Resultados ${servicesCount}, Página ${currentPage} - ServiceMarket`;
+  }, [currentPage, servicesCount]);
 
   return (
     <main className="search-page">
