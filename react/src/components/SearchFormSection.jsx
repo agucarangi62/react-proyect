@@ -1,17 +1,17 @@
 import styles from "./SearchFormSection.module.css";
 
-import { useId } from "react";
-
-export default function SearchFormSection({ onTextFilter }) {
-  const idText = useId();
-
-  const handleTextChange = (event) => {
-    const text = event.target.value;
-    onTextFilter(text);
-  };
-
-  const handleSubmit = (event) => {
+export default function SearchFormSection() {
+  const handleSearch = (event) => {
     event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const searchTerm = formData.get("search");
+
+    const url = searchTerm
+      ? `/search?text=${encodeURIComponent(searchTerm)}`
+      : `/search`;
+
+    window.location.href = url; 
   };
 
   return (
@@ -24,7 +24,7 @@ export default function SearchFormSection({ onTextFilter }) {
             Conectá con freelancers de distintas áreas y encontrá el talento que necesitás para hacerlas realidad.
           </p>
 
-          <form onSubmit={handleSubmit} action="" role="search">
+          <form onSubmit={handleSearch} action="" role="search">
             <div className={styles.searchBar}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,6 @@ export default function SearchFormSection({ onTextFilter }) {
                 strokeWidth="1.25"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="icon icon-tabler icons-tabler-outline icon-tabler-search"
               >
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
@@ -45,10 +44,10 @@ export default function SearchFormSection({ onTextFilter }) {
 
               <input
                 type="text"
-                name={idText}
+                name="search"
                 id="index-search-input"
                 placeholder="¿Qué buscas? Ej: Desarrollador web, traductor, etc."
-                onChange={handleTextChange}
+                required
               />
 
               <button type="submit">Buscar</button>

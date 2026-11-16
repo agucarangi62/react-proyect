@@ -5,147 +5,28 @@ import ResultsSearchPage from "../components/ResultsSearchPage.jsx";
 import SearchFormSectionSearch from "../components/SearchFormSectionSearch.jsx";
 
 import getServices from "../services/serviceService.js";
-
-import { useEffect, useState } from "react";
+import { useSearchServices } from "../hooks/useSearchServices.js";
+import { useEffect } from "react";
 
 export function SearchPage() {
   const services = getServices();
 
-  const [textToFilter, setTextToFilter] = useState("");
-  const [selectedFilters, setSelectedFilters] = useState({
-    category: "",
-    minPrice: "",
-    maxPrice: "",
-    rating: "",
-    sortBy: "",
-  });
+  const {
+    selectedFilters,
+    currentPage,
+    pagedServices,
+    totalPages,
+    resultLabel,
+    totalResults,
+    handlePageChange,
+    handleFilterChange,
+    handleTextFilter,
+    handleClearFilters,
+  } = useSearchServices(services);
 
-  const servicesFiltered = services.filter((service) => {
-    const { category, price, rating } = service.data;
-
-    const matchesCategory =
-      selectedFilters.category === "" || category === selectedFilters.category;
-
-    const matchesMinPrice =
-      selectedFilters.minPrice === "" ||
-      price >= Number(selectedFilters.minPrice);
-
-    const matchesMaxPrice =
-      selectedFilters.maxPrice === "" ||
-      price <= Number(selectedFilters.maxPrice);
-
-    const matchesRating =
-      selectedFilters.rating === "" || rating >= Number(selectedFilters.rating);
-
-    return (
-      matchesCategory && matchesMinPrice && matchesMaxPrice && matchesRating
-    );
-  });
-
-  const normalizedText = textToFilter.trim().toLowerCase();
-
-  const servicesSearched =
-    normalizedText === ""
-      ? servicesFiltered
-      : servicesFiltered.filter((service) => {
-          return (
-            service.title.toLowerCase().includes(normalizedText) ||
-            service.freelancer.toLowerCase().includes(normalizedText) ||
-            service.description.toLowerCase().includes(normalizedText) ||
-            service.ubicacion.toLowerCase().includes(normalizedText)
-          );
-        });
-
-  const servicesSorted = [...servicesSearched];
-  switch (selectedFilters.sortBy) {
-    case "price-asc":
-      servicesSorted.sort((a, b) => a.data.price - b.data.price);
-      break;
-
-    case "price-desc":
-      servicesSorted.sort((a, b) => b.data.price - a.data.price);
-      break;
-
-    case "recent":
-      servicesSorted.sort(
-        (a, b) => new Date(b.data.publishedAt) - new Date(a.data.publishedAt),
-      );
-      break;
-
-    case "best-rated":
-      servicesSorted.sort(
-        (a, b) =>
-          b.data.rating - a.data.rating ||
-          b.data.ratingCount - a.data.ratingCount,
-      );
-      break;
-
-    case "popular":
-      servicesSorted.sort(
-        (a, b) => b.data.completedOrders - a.data.completedOrders,
-      );
-      break;
-
-    default:
-      break;
-  }
-
-  // Paginacion
-  const RESULT_PER_PAGE = 8;
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const totalPages = Math.ceil(servicesSorted.length / RESULT_PER_PAGE);
-
-  const pagedServices = servicesSorted.slice(
-    (currentPage - 1) * RESULT_PER_PAGE,
-    currentPage * RESULT_PER_PAGE,
-  );
-
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
-
-  const handleFilterChange = (name, value) => {
-    setSelectedFilters((prevFilters) => ({
-      ...prevFilters,
-      [name]: value,
-    }));
-
-    setCurrentPage(1);
-  };
-
-  const handleTextFilter = (text) => {
-    setCurrentPage(1);
-    setTextToFilter(text);
-  };
-
-  const handleClearFilters = () => {
-    setCurrentPage(1);
-
-    setSelectedFilters({
-      category: "",
-      minPrice: "",
-      maxPrice: "",
-      rating: "",
-      sortBy: "",
-    });
-  };
-
-  const endResult = Math.min(
-    currentPage * RESULT_PER_PAGE,
-    servicesSorted.length,
-  );
-
-  const resultLabel =
-    servicesSorted.length === 0
-      ? "0 resultados"
-      : `Resultados ${endResult} de ${servicesSorted.length}`;
-
-      
-  const servicesCount = servicesSorted.length;
   useEffect(() => {
-    document.title = `Resultados ${servicesCount}, Página ${currentPage} - ServiceMarket`;
-  }, [currentPage, servicesCount]);
+    document.title = `Resultados ${totalResults}, Página ${currentPage} - ServiceMarket`;
+  }, [currentPage, totalResults]);
 
   return (
     <main className="search-page">
