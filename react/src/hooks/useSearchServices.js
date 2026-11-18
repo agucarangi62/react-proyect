@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const INITIAL_FILTERS = {
   category: "",
@@ -6,18 +6,73 @@ const INITIAL_FILTERS = {
   maxPrice: "",
   rating: "",
   sortBy: "",
+  deliveryTime: "",
+  language: "",
 };
 
 const RESULT_PER_PAGE = 8;
 
 export function useSearchServices(services) {
-  const [textToFilter, setTextToFilter] = useState("");
+  const [textToFilter, setTextToFilter] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("text") || "";
+  });
 
-  const [selectedFilters, setSelectedFilters] = useState(() => ({
-    ...INITIAL_FILTERS,
-  }));
+  const [debouncedText, setDebouncedText] = useState("");
 
-  const [currentPage, setCurrentPage] = useState(1);
+  const [selectedFilters, setSelectedFilters] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    return {
+      ...INITIAL_FILTERS,
+      category: params.get("category") || "",
+      minPrice: params.get("minPrice") || "",
+      maxPrice: params.get("maxPrice") || "",
+      rating: params.get("rating") || "",
+      sortBy: params.get("sortBy") || "",
+    };
+  });
+
+  const [currentPage, setCurrentPage] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    const pageParam = params.get("page");
+    const page = Number(pageParam);
+
+    return pageParam !== null && Number.isInteger(page) && page > 0 ? page : 1;
+  });
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setDebouncedText(textToFilter);
+    }, 500);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [textToFilter]);
+
+  useEffect(() => {
+    const params = new URLSearchParams();
+
+    if (debouncedText) params.append("text", debouncedText);
+    if (selectedFilters.category)
+      params.append("category", selectedFilters.category);
+    if (selectedFilters.minPrice)
+      params.append("minPrice", selectedFilters.minPrice);
+    if (selectedFilters.maxPrice)
+      params.append("maxPrice", selectedFilters.maxPrice);
+    if (selectedFilters.rating) params.append("rating", selectedFilters.rating);
+    if (selectedFilters.sortBy) params.append("sortBy", selectedFilters.sortBy);
+
+    if (currentPage > 1) {
+      params.append("page", currentPage);
+    }
+
+    const newUrl = params.toString()
+      ? `${window.location.pathname}?${params.toString()}`
+      : `${window.location.pathname}`;
+
+    window.history.pushState({}, "", newUrl);
+  }, [selectedFilters, debouncedText, currentPage]);
 
   const servicesFiltered = services.filter((service) => {
     const { category, price, rating } = service.data;
@@ -41,7 +96,7 @@ export function useSearchServices(services) {
     );
   });
 
-  const normalizedText = textToFilter.trim().toLowerCase();
+  const normalizedText = debouncedText.trim().toLowerCase();
 
   const servicesSearched =
     normalizedText === ""
@@ -137,6 +192,7 @@ export function useSearchServices(services) {
     totalPages,
     resultLabel,
     totalResults,
+    textToFilter,
     handlePageChange,
     handleFilterChange,
     handleTextFilter,

@@ -25,6 +25,7 @@ export function HomePage() {
       <SearchFormSection />
 
       <main className="container">
+        <title>ServiceMarket - Encuentra servicios freelance</title>
         <section>
           <div className="popular-services">
             <h2>Servicios Populares</h2>

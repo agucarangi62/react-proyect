@@ -45,6 +45,11 @@ export default function ResultsSearchPage({
       <div className={styles.searchServices}>
         {/* Cards */}
         {/* Services */}
+        {
+          services.length === 0 && (
+            <p className={styles.noServices}>No se encontraron servicios</p>
+          )
+        }
         {services.map((service) => (
           <ServiceCard key={service.id} {...service} />
         ))}

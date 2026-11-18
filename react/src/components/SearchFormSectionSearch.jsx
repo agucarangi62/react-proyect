@@ -1,16 +1,16 @@
 import styles from "./SearchFormSection.module.css";
 import styles2 from "./SearchFormSectionSearch.module.css";
 
-export default function SearchFormSectionSearch({ onTextFilter }) {
+export default function SearchFormSectionSearch({ onTextFilter, inicialText }) {
+
   const handleTextChange = (event) => {
-    onTextFilter(event.target.value);
+    const text = event.target.value;
+    onTextFilter(text);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
   };
-
-
 
   return (
     <section className={styles2.searchHeader}>
@@ -40,6 +40,7 @@ export default function SearchFormSectionSearch({ onTextFilter }) {
             name=""
             id=""
             placeholder="¿Qué buscas? Ej: Desarrollador web, traductor, etc."
+            defaultValue={inicialText}
             onChange={handleTextChange}
           />
           <button type="submit">Buscar</button>

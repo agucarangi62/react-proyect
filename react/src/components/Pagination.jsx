@@ -1,38 +1,56 @@
 import styles from "./Pagination.module.css";
 
-export default function Pagination({ currentPage = 1, totalPages = 5, onPageChange }) {
+export default function Pagination({
+  currentPage = 1,
+  totalPages = 5,
+  onPageChange,
+}) {
   // Array de paginas a mostrar
   const pages = Array.from({ length: totalPages }, (_, index) => index + 1);
 
   const isFirstPage = currentPage === 1;
   const isLastPage = currentPage === totalPages;
 
-  const stylePrevButton = isFirstPage ? { pointerEvents: "none", opacity: 0.5 }: {};
-  const styleNextButton = isLastPage? { pointerEvents: "none", opacity: 0.5 }: {};
+  const stylePrevButton = isFirstPage
+    ? { pointerEvents: "none", opacity: 0.5 }
+    : {};
+  const styleNextButton = isLastPage
+    ? { pointerEvents: "none", opacity: 0.5 }
+    : {};
 
   const handlePrevClick = (event) => {
     event.preventDefault();
 
-    if(!isFirstPage){
+    if (!isFirstPage) {
       onPageChange(currentPage - 1);
     }
-  }
+  };
 
   const handleNextClick = (event) => {
     event.preventDefault();
-    if(!isLastPage){
+    if (!isLastPage) {
       onPageChange(currentPage + 1);
     }
-  }
+  };
 
   const handleChangePage = (event, page) => {
     event.preventDefault();
     onPageChange(page);
-  }
+  };
+
+  const builtPageUrl = (page) => {
+    const url = new URL(window.location);
+    url.searchParams.set("page", page);
+    return `${url.pathname}?${url.searchParams.toString()}`;
+  };
 
   return (
     <div className={styles.pagination}>
-      <a style={stylePrevButton} onClick={handlePrevClick}>
+      <a
+        href={builtPageUrl(currentPage - 1)}
+        style={stylePrevButton}
+        onClick={handlePrevClick}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -52,7 +70,7 @@ export default function Pagination({ currentPage = 1, totalPages = 5, onPageChan
 
       {pages.map((page) => (
         <a
-          href="#"
+          href={builtPageUrl(page)}
           key={page}
           className={page === currentPage ? styles.isActive : ""}
           onClick={(event) => handleChangePage(event, page)}
@@ -61,8 +79,11 @@ export default function Pagination({ currentPage = 1, totalPages = 5, onPageChan
         </a>
       ))}
 
-
-      <a style={styleNextButton} onClick={handleNextClick}>
+      <a
+        href={builtPageUrl(currentPage + 1)}
+        style={styleNextButton}
+        onClick={handleNextClick}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"

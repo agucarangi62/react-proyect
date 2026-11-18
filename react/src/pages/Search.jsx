@@ -6,7 +6,6 @@ import SearchFormSectionSearch from "../components/SearchFormSectionSearch.jsx";
 
 import getServices from "../services/serviceService.js";
 import { useSearchServices } from "../hooks/useSearchServices.js";
-import { useEffect } from "react";
 
 export function SearchPage() {
   const services = getServices();
@@ -18,18 +17,18 @@ export function SearchPage() {
     totalPages,
     resultLabel,
     totalResults,
+    textToFilter,
     handlePageChange,
     handleFilterChange,
     handleTextFilter,
     handleClearFilters,
   } = useSearchServices(services);
 
-  useEffect(() => {
-    document.title = `Resultados ${totalResults}, Página ${currentPage} - ServiceMarket`;
-  }, [currentPage, totalResults]);
+  const title = `Resultados ${totalResults}, Página ${currentPage} - ServiceMarket`;
 
   return (
     <main className="search-page">
+      <title>{title}</title>
       <div className="search-layout">
         <Aside
           selectedFilters={selectedFilters}
@@ -37,7 +36,7 @@ export function SearchPage() {
           onClearFilters={handleClearFilters}
         />
         <section className="search-content">
-          <SearchFormSectionSearch onTextFilter={handleTextFilter} />
+          <SearchFormSectionSearch onTextFilter={handleTextFilter} inicialText={textToFilter}/>
           <MobileFiltersSearchPage />
           <ResultsSearchPage
             services={pagedServices}

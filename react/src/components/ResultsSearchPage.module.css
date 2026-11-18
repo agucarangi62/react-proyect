@@ -55,6 +55,11 @@
   font-size: 14px;
 }
 
+.noServices {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
 
 /*BOTON DE PRUEBA*/
 .btnAdd {
@@ -74,3 +79,4 @@
     pointer-events: none;
   }
 }
+
