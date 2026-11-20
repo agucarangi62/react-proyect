@@ -1,0 +1,50 @@
+.page {
+  padding: 1.5rem 0 4rem;
+}
+
+.heading {
+  margin-bottom: 1.5rem;
+}
+
+.heading h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+/* Main layout */
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr);
+  align-items: start;
+  gap: 2rem;
+}
+
+.mainContent {
+  min-width: 0;
+}
+
+.serviceRating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  margin-top: 0.75rem;
+
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.serviceRating strong {
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+
+/* Responsive */
+@media (max-width: 992px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}

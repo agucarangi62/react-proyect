@@ -1,10 +1,10 @@
 import styles from "./Header.module.css";
-
+import { Link } from "./Link.jsx";
 
 export default function Header() {
   return (
     <header className={styles.siteHeader}>
-      <a href="/">
+      <Link href="/">
         <h1>
           <svg
             fill="currentColor"
@@ -19,19 +19,19 @@ export default function Header() {
           </svg>
           ServiceMarket
         </h1>
-      </a>
+      </Link>
 
       <nav>
-        <a href="/search">Explorar</a>
-        <a href="#">¿Cómo funciona?</a>
-        <a href="#">Conviertete en vendedor</a>
+        <Link href="/search">Explorar</Link>
+        <Link href="#">¿Cómo funciona?</Link>
+        <Link href="#">Conviertete en vendedor</Link>
       </nav>
 
       <div className={styles.headerActions}>
-        <a href="#">Iniciar sesión</a>
-        <a href="#" className={styles.btnSecondary}>
+        <Link href="#">Iniciar sesión</Link>
+        <Link href="#" className={styles.btnSecondary}>
           Registrarse
-        </a>
+        </Link>
       </div>
       <button className={styles.menuToggle} aria-label="Abrir menú">
         <svg

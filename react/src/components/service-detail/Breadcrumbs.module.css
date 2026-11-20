@@ -1,0 +1,32 @@
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+
+  margin-bottom: 1.5rem;
+
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.item a {
+  transition: color 0.2s;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.item a:hover {
+  color: var(--primary-light);
+}
+
+.item [aria-current="page"] {
+  color: var(--text-muted);
+}

@@ -1,0 +1,95 @@
+.freelancerInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  margin-bottom: 2rem;
+}
+
+/* Profile */
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  min-width: 0;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 40px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  background: var(--background);
+  color: var(--primary);
+
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+.actions button:hover {
+  background-color: var(--background-terciary);
+
+}
+.shareBtn {
+  transition: color 0.2s ease;
+}
+.shareBtn:hover {
+  color: var(--primary-hover)
+}
+
+.favBtn {
+  transition: color 0.2s ease;
+}
+.favBtn:hover {
+  color: #ef4444;
+}
+
+/* Icons */
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon {
+  font-size: 1.25rem;
+  color: var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .actions {
+    gap: 0.5rem;
+  }
+
+  .actions button {
+    width: 38px;
+    height: 38px;
+  }
+}
