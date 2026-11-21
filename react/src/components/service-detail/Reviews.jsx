@@ -58,7 +58,7 @@ export default function Reviews({ reviews, totalReviews, averageRating }) {
           onClick={() => setShowAll((previous) => !previous)}
           aria-expanded={showAll}
         >
-          {showAll ? "Mostrar mas Reviews" : "Mostrar menos Reviews"}
+          {showAll ? "Mostrar menos Reviews" : "Mostrar mas Reviews"}
         </button>
       )}
     </section>
