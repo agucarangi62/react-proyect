@@ -49,7 +49,7 @@ import { useParams } from "react-router";
 //   );
 // }
 
-export function ServiceDetail() {
+export default function ServiceDetail() {
   const { serviceId } = useParams(); // Obtener el ID del servicio desde los parámetros de la URL
   const service = getServiceById(serviceId); // Obtener el servicio por ID
   if(!serviceId){

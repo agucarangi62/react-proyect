@@ -1,5 +1,6 @@
 import styles from "./Header.module.css";
 import { Link } from "./Link.jsx";
+import { NavLink } from "react-router"
 
 export default function Header() {
   return (
@@ -22,7 +23,9 @@ export default function Header() {
       </Link>
 
       <nav>
-        <Link href="/search">Explorar</Link>
+        <NavLink 
+          className={({ isActive }) => isActive ? styles.isActive : ''}
+          to="/search">Explorar</NavLink>
         <Link href="#">¿Cómo funciona?</Link>
         <Link href="#">Conviertete en vendedor</Link>
       </nav>

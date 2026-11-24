@@ -70,7 +70,7 @@ export default function PricingCard({ plans, onContinue, onContact }) {
               <path d="M4 11h16" />
               <path d="M15 19l2 2l4 -4" />
             </svg>
-            <span>Entrega en {selectedPlan.deliveryDays} d</span>
+            <span>Entrega en {selectedPlan.deliveryDays} días</span>
           </div>
 
           <div className={styles.detailItem}>

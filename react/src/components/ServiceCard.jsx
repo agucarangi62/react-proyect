@@ -1,6 +1,8 @@
 import styles from "./ServiceCard.module.css";
+import { Link } from "../components/Link.jsx";
 
 export default function ServiceCard({
+  id,
   title,
   freelancer,
   description,
@@ -17,9 +19,11 @@ export default function ServiceCard({
       data-sort={data.sort}
     >
       <header className={styles.cardHeader}>
-        <div className={styles.cardImage}>
-          <img src={image} alt="" />
-        </div>
+        <Link href={`/service/${id}`}>
+          <div className={styles.cardImage}>
+            <img src={image} alt="" />
+          </div>
+        </Link>
       </header>
       <div className={styles.cardBody}>
         <div className={styles.cardAuthor}>
@@ -30,7 +34,9 @@ export default function ServiceCard({
           />
           <p>{freelancer}</p>
         </div>
-        <p className={styles.cardTitle}>{title}</p>
+        <Link href={`/service/${id}`} className={styles.title}>
+          <p className={styles.cardTitle}>{title}</p>
+        </Link>
         <p className={styles.cardDescription}>{description}</p>
         <div className={styles.cardRating}>
           <p>
@@ -59,6 +65,7 @@ export default function ServiceCard({
             <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
           </svg>
         </button>
+        <Link href={`/service/${id}`} className={styles.details}>Ver detalles</Link>
         <p>
           Desde <span>${data.price}</span>
         </p>

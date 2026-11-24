@@ -7,7 +7,7 @@ import SearchFormSectionSearch from "../components/SearchFormSectionSearch.jsx";
 import getServices from "../services/serviceService.js";
 import { useSearchServices } from "../hooks/useSearchServices.js";
 
-export function SearchPage() {
+export default function SearchPage() {
   const services = getServices();
 
   const {

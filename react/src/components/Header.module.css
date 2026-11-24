@@ -92,6 +92,13 @@
   color: var(--text-primary);
 }
 
+
+/*Navlink*/
+.siteHeader .isActive {
+  color: var(--primary-light);
+  pointer-events: none;
+}
+
 @media (max-width: 992px) {
   .siteHeader nav {
     display: none;

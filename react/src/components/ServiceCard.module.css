@@ -17,7 +17,6 @@
   display: none;
 }
 
-
 /* HEADER / IMAGE */
 .cardHeader {
   position: relative;
@@ -62,12 +61,18 @@
   flex-grow: 1;
 }
 
+.title {
+  text-decoration: none;
+}
 .cardTitle {
   font-size: 16px;
   font-weight: 500;
   color: var(--text-primary);
   margin-bottom: 12px;
   transition: color 0.2s ease;
+}
+.cardTitle:hover {
+  color: var(--primary-hover);
 }
 
 .cardDescription {
@@ -133,3 +138,14 @@
   }
 }
 
+
+
+.details {
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.details:hover {
+  text-decoration: underline;
+  color: var(--primary-hover);
+}

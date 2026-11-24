@@ -5,7 +5,7 @@ import SearchFormSection from "../components/SearchFormSection.jsx";
 
 import getServices from "../services/serviceService.js";
 
-export function HomePage() {
+export default function HomePage() {
   const services = getServices();
 
   const popularServices = [...services]

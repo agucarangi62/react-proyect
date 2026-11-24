@@ -48,6 +48,7 @@ export default function Aside({
             >
               <option value="">Todas las categorías</option>
               <option value="technology">Programación y tecnología</option>
+              <option value="design">Diseño</option>
               <option value="marketing">Marketing digital</option>
               <option value="writing">Escritura y traducción</option>
               <option value="music">Música y audio</option>
