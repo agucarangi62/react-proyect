@@ -137,12 +137,9 @@
   width: 100%;
   min-height: 48px;
   padding: 0.75rem 1rem;
-
   border-radius: 8px;
-
   font-size: 1rem;
   font-weight: 700;
-
   cursor: pointer;
   transition: background-color 0.2s, opacity 0.2s;
 }
@@ -153,7 +150,7 @@
   color: white;
 }
 
-.continueButton:hover {
+.continueButton:not(:disabled):hover {
   background-color: var(--primary-hover);
 }
 
@@ -163,8 +160,26 @@
   color: var(--text-primary);
 }
 
-.contactButton:hover {
+.contactButton:not(:disabled):hover {
   background-color: var(--background-terciary);
+}
+
+/* Disabled */
+.continueButton:disabled,
+.contactButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.continueButton:disabled {
+  background-color: var(--background-secondary);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.contactButton:disabled {
+  background-color: var(--background-secondary);
+  color: var(--text-muted);
 }
 
 /* Responsive */

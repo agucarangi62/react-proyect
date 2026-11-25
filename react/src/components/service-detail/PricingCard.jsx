@@ -1,8 +1,15 @@
 import { useState, useId } from "react";
+import { useAuth } from "../../context/AuthContext.jsx";
 
 import styles from "./PricingCard.module.css";
 
-export default function PricingCard({ plans, onContinue, onContact }) {
+
+export default function PricingCard({
+  plans,
+  onContinue,
+  onContact
+}) {
+  const { isLoggedIn } = useAuth();
   const [selectedPlanId, setSelectedPlanId] = useState(plans[0]?.id);
   const tabsId = useId();
 
@@ -126,19 +133,24 @@ export default function PricingCard({ plans, onContinue, onContact }) {
         <div className={styles.actions}>
           <button
             type="button"
+            disabled={!isLoggedIn}
             className={styles.continueButton}
             onClick={() => onContinue?.(selectedPlan)}
           >
-            Continuar (${selectedPlan.price})
+            {isLoggedIn
+              ? `Continuar ($${selectedPlan.price})`
+              : "Inicia sesión para continuar"}
           </button>
 
-          <button
-            type="button"
-            className={styles.contactButton}
-            onClick={onContact}
-          >
-            Contactar Freelancer
-          </button>
+          {isLoggedIn && (
+            <button
+              type="button"
+              className={styles.contactButton}
+              onClick={onContact}
+            >
+              Contactar Freelancer
+            </button>
+          )}
         </div>
       </div>
     </aside>

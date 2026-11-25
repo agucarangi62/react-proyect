@@ -1,8 +1,11 @@
 import styles from "./Header.module.css";
+import { useAuth } from "../context/AuthContext.jsx";
 import { Link } from "./Link.jsx";
-import { NavLink } from "react-router"
+import { NavLink } from "react-router";
 
 export default function Header() {
+  const { isLoggedIn, login, logout } = useAuth();
+
   return (
     <header className={styles.siteHeader}>
       <Link href="/">
@@ -23,19 +26,33 @@ export default function Header() {
       </Link>
 
       <nav>
-        <NavLink 
-          className={({ isActive }) => isActive ? styles.isActive : ''}
-          to="/search">Explorar</NavLink>
+        <NavLink
+          className={({ isActive }) => (isActive ? styles.isActive : "")}
+          to="/search"
+        >
+          Explorar
+        </NavLink>
         <Link href="#">¿Cómo funciona?</Link>
         <Link href="#">Conviertete en vendedor</Link>
       </nav>
 
       <div className={styles.headerActions}>
-        <Link href="#">Iniciar sesión</Link>
-        <Link href="#" className={styles.btnSecondary}>
-          Registrarse
-        </Link>
+        {isLoggedIn ? (
+          <Link className={styles.btnPrimary} onClick={logout}>
+            Cerrar sesión
+          </Link>
+        ) : (
+          <Link href="#" onClick={login}>
+            Iniciar sesión
+          </Link>
+        )}
+        {!isLoggedIn && (
+          <Link href="#" className={styles.btnSecondary}>
+            Registrarse
+          </Link>
+        )}
       </div>
+
       <button className={styles.menuToggle} aria-label="Abrir menú">
         <svg
           xmlns="http://www.w3.org/2000/svg"
