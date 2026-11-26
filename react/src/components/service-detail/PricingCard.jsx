@@ -1,7 +1,7 @@
 import { useState, useId } from "react";
-import { useAuth } from "../../context/AuthContext.jsx";
 
 import styles from "./PricingCard.module.css";
+import { useAuthStore } from "../../store/authStore.js";
 
 
 export default function PricingCard({
@@ -9,7 +9,7 @@ export default function PricingCard({
   onContinue,
   onContact
 }) {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn } = useAuthStore();
   const [selectedPlanId, setSelectedPlanId] = useState(plans[0]?.id);
   const tabsId = useId();
 

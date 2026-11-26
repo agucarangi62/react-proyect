@@ -1,10 +1,10 @@
 import styles from "./Header.module.css";
-import { useAuth } from "../context/AuthContext.jsx";
 import { Link } from "./Link.jsx";
 import { NavLink } from "react-router";
+import { useAuthStore } from "../store/authStore.js";
 
 export default function Header() {
-  const { isLoggedIn, login, logout } = useAuth();
+  const { isLoggedIn, login, logout } = useAuthStore();
 
   return (
     <header className={styles.siteHeader}>

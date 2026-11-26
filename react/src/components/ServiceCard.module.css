@@ -36,6 +36,8 @@
 
 /* FAVORITE BUTTON */
 .favBtn {
+  grid-column: 1;
+  justify-self: start;
   background: var(--background);
   backdrop-filter: blur(6px);
   border: none;
@@ -122,11 +124,13 @@
 .cardFooter {
   padding: 12px 16px;
   border-top: 1px solid #e5e7eb;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
 
   p {
+    grid-column: 3;
+    justify-self: end;
     font-size: 13px;
     font-weight: 700;
     color: var(--primary);
@@ -139,8 +143,9 @@
 }
 
 
-
 .details {
+  grid-column: 2;
+  justify-self: center;
   text-decoration: none;
   color: var(--text-primary);
 }
