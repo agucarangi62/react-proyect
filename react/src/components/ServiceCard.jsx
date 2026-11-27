@@ -1,6 +1,8 @@
 import styles from "./ServiceCard.module.css";
 import { Link } from "../components/Link.jsx";
-import { useAuthStore } from '../store/authStore.js'
+import { useAuthStore } from "../store/authStore.js";
+import { useFavoritesStore } from "../store/favoritesStore.js";
+import { IconHeart, IconHeartFilled } from "@tabler/icons-react";
 
 export default function ServiceCard({
   id,
@@ -12,6 +14,8 @@ export default function ServiceCard({
   data,
 }) {
   const { isLoggedIn } = useAuthStore();
+  const toggleFavorite = useFavoritesStore((state) => state.toggleFavorite);
+  const isFavorite = useFavoritesStore((state) => state.isFavorite(id));
 
   return (
     <article
@@ -52,22 +56,16 @@ export default function ServiceCard({
       </div>
       <footer className={styles.cardFooter}>
         {isLoggedIn && (
-          <button className={styles.favBtn}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="icon icon-tabler icons-tabler-outline icon-tabler-heart"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
-            </svg>
+          <button
+            type="button"
+            className={`${styles.favBtn} ${isFavorite ? styles.favBtnActive : ""}`}
+            onClick={() => toggleFavorite(id)}
+          >
+            {isFavorite ? (
+              <IconHeartFilled size={24} />
+            ) : (
+              <IconHeart size={24} stroke={2} />
+            )}
           </button>
         )}
         <Link href={`/service/${id}`} className={styles.details}>

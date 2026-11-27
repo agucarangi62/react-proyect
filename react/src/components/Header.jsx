@@ -2,9 +2,14 @@ import styles from "./Header.module.css";
 import { Link } from "./Link.jsx";
 import { NavLink } from "react-router";
 import { useAuthStore } from "../store/authStore.js";
+import { useFavoritesStore } from "../store/favoritesStore.js";
+import { IconHeart } from "@tabler/icons-react";
 
 export default function Header() {
   const { isLoggedIn, login, logout } = useAuthStore();
+  const { countFavorites } = useFavoritesStore();
+
+  const numberOfFavorites = countFavorites();
 
   return (
     <header className={styles.siteHeader}>
@@ -38,14 +43,35 @@ export default function Header() {
 
       <div className={styles.headerActions}>
         {isLoggedIn ? (
-          <Link className={styles.btnPrimary} onClick={logout}>
-            Cerrar sesión
-          </Link>
+          <>
+            <NavLink
+              className={({ isActive }) =>
+                `${styles.headerLink} ${isActive ? styles.isActive : ""}`
+              }
+              to="/favorites"
+            >
+              Favorites:({numberOfFavorites})<IconHeart size={21} stroke={1.5}/>
+            </NavLink>
+
+            <NavLink
+              className={({ isActive }) =>
+                `${styles.headerLink} ${isActive ? styles.isActive : ""}`
+              }
+              to="/profile"
+            >
+              Profile
+            </NavLink>
+
+            <Link className={styles.btnPrimary} onClick={logout}>
+              Cerrar sesión
+            </Link>
+          </>
         ) : (
-          <Link href="#" onClick={login}>
+          <Link href="#" className={styles.btnPrimary} onClick={login}>
             Iniciar sesión
           </Link>
         )}
+
         {!isLoggedIn && (
           <Link href="#" className={styles.btnSecondary}>
             Registrarse

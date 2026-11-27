@@ -52,7 +52,7 @@ import { useParams } from "react-router";
 export default function ServiceDetail() {
   const { serviceId } = useParams(); // Obtener el ID del servicio desde los parámetros de la URL
   const service = getServiceById(serviceId); // Obtener el servicio por ID
-  if(!serviceId){
+  if (!service) {
     return <main className="container">Servicio no encontrado.</main>;
   }
 
@@ -91,9 +91,11 @@ export default function ServiceDetail() {
     averageRating: service.data.rating,
     reviews: service.details.reviews,
   };
+  const title = `${service.title ?? "Servicios"} - ServiceMarket`;
 
   return (
     <main className={`${styles.page} container`}>
+      <title>{title}</title>
       <Breadcrumbs items={breadcrumbs} />
 
       <header className={styles.heading}>
@@ -106,7 +108,7 @@ export default function ServiceDetail() {
         </div>
       </header>
 
-      <FreelancerInfo {...freelancer} />
+      <FreelancerInfo {...freelancer} serviceId={service.id} />
 
       <div className={styles.layout}>
         <div className={styles.mainContent}>

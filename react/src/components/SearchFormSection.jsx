@@ -18,7 +18,7 @@ export default function SearchFormSection() {
     <>
       <section className={`hero  ${styles.heroBackground}`}>
         <div className={styles.heroContent}>
-          <h1>Tus ideas merecen grandes profesionales.</h1>
+          <h1>Tus ideas merecen grandes <span>profesionales.</span></h1>
 
           <p>
             Conectá con freelancers de distintas áreas y encontrá el talento que necesitás para hacerlas realidad.

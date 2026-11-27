@@ -6,7 +6,7 @@
 
 :root {
   --primary: #3b4550;
-  --primary-dark: #0a3d66;
+  --primary-dark: #13578f;
   --primary-light: #09f;
   --primary-hover: #1e8af7;
   --secundary-hover: #e2e8f0;
@@ -77,8 +77,6 @@ body {
   }
 }
 
-
-
 /* services */
 .services {
   display: grid;
@@ -90,6 +88,7 @@ body {
 .popular-services h2{
   text-align: center;
   margin: 2.5rem 0;
+  font-size: 2rem;
 }
 
 

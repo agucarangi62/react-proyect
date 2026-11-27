@@ -66,8 +66,18 @@
 .favBtn {
   transition: color 0.2s ease;
 }
-.favBtn:hover {
+
+.actions .favBtn {
+  color: var(--primary);
+}
+
+.actions .favBtn:hover,
+.actions .favBtn.favBtnActive {
   color: #ef4444;
+}
+
+.favBtn svg {
+  display: block;
 }
 
 /* Icons */

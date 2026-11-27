@@ -55,9 +55,15 @@
   }
 }
 
-
 /* Header buttons */
-.headerActions a {
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.headerActions .btnPrimary,
+.headerActions .btnSecondary {
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   background-color: var(--primary-light);
@@ -84,6 +90,36 @@
   }
 }
 
+/* header link */
+.headerLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.headerLink:hover,
+.headerLink:focus {
+  color: var(--primary-hover);
+}
+
+.headerLink.isActive {
+  color: var(--primary-light);
+  pointer-events: none;
+}
+
+.headerLink svg {
+  flex-shrink: 0;
+  display: block;
+  color: red;
+}
+
+
+/* Menu toggle */
 .menuToggle {
   display: none;
   background: none;
@@ -91,7 +127,6 @@
   cursor: pointer;
   color: var(--text-primary);
 }
-
 
 /*Navlink*/
 .siteHeader .isActive {

@@ -44,15 +44,20 @@
   border-radius: 50%;
   padding: 8px;
   cursor: pointer;
+  color: var(--primary);
   transition: color 0.2s ease;
 }
 
-.favBtn svg {
-  color: var(--primary);
+.favBtn:hover {
+  color: #ef4444;
+}
 
-  &:hover {
-    color: #ef4444;
-  }
+.favBtn svg {
+  display: block;
+}
+
+.favBtnActive {
+  color: #ef4444;
 }
 
 /* CARD BODY */
