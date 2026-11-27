@@ -1,0 +1,14 @@
+/* Popular services */
+.popularServices h2 {
+  text-align: center;
+  margin: 2.5rem 0;
+  font-size: 2rem;
+}
+
+/* Services grid */
+.services {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(285px, 378px));
+  justify-content: center;
+}

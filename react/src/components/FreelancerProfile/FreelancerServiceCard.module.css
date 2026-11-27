@@ -1,0 +1,48 @@
+.serviceCard {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background-color: var(--background-secondary);
+  transition: box-shadow 0.2s ease;
+}
+
+.serviceCard:hover {
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.serviceImage {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.serviceContent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 16px;
+}
+
+.serviceContent h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.description {
+  flex-grow: 1;
+  margin: 8px 0 0;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.price {
+  margin: 20px 0 0;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 700;
+}

@@ -7,6 +7,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
+  position: relative;
 
   svg {
     width: 1.5rem;
@@ -35,8 +36,18 @@
   }
 }
 
+.headerContent {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
 /* Nav bar*/
 .siteHeader nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
   align-items: center;
   gap: 1rem;
   display: flex;
@@ -60,6 +71,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-left: auto;
 }
 
 .headerActions .btnPrimary,
@@ -118,7 +130,6 @@
   color: red;
 }
 
-
 /* Menu toggle */
 .menuToggle {
   display: none;
@@ -135,12 +146,49 @@
 }
 
 @media (max-width: 992px) {
-  .siteHeader nav {
+  .siteHeader {
+    position: relative;
+  }
+
+  .headerContent {
     display: none;
   }
 
-  .headerActions {
-    display: none;
+  .menuOpen .headerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    padding: 1.5rem 1.75rem;
+    background-color: var(--background-secondary);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 4px 10px var(--shadow);
+    z-index: 100;
+  }
+
+  .menuOpen nav {
+    position: static;
+    transform: none;
+    left: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .menuOpen .headerActions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    margin-left: 0;
   }
 
   .menuToggle {

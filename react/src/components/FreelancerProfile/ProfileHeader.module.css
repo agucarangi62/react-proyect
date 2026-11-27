@@ -1,0 +1,118 @@
+.profileHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px;
+  background-color: var(--background-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.profileInfo {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-width: 0;
+}
+
+.avatar {
+  width: 128px;
+  height: 128px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profileDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.profileDetails h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.profession,
+.location {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.rating svg {
+  color: #f5a623;
+}
+
+.ratingValue {
+  font-weight: 700;
+}
+
+.reviewCount {
+  color: var(--text-muted);
+}
+
+.contactButton {
+  flex-shrink: 0;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-light);
+  color: var(--text-secondary);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.contactButton:hover {
+  background-color: var(--primary-hover);
+}
+
+@media (max-width: 640px) {
+  .profileHeader {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+  }
+
+  .profileInfo {
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .avatar {
+    width: 88px;
+    height: 88px;
+  }
+
+  .profileDetails h1 {
+    font-size: 22px;
+  }
+
+  .profession,
+  .location {
+    font-size: 14px;
+  }
+
+  .contactButton {
+    width: 100%;
+  }
+}

@@ -4,15 +4,28 @@ import { NavLink } from "react-router";
 import { useAuthStore } from "../store/authStore.js";
 import { useFavoritesStore } from "../store/favoritesStore.js";
 import { IconHeart } from "@tabler/icons-react";
+import { useState } from "react";
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   const { isLoggedIn, login, logout } = useAuthStore();
   const { countFavorites } = useFavoritesStore();
 
   const numberOfFavorites = countFavorites();
 
   return (
-    <header className={styles.siteHeader}>
+    <header
+      className={`${styles.siteHeader} ${isMenuOpen ? styles.menuOpen : ""}`}
+    >
       <Link href="/">
         <h1>
           <svg
@@ -30,56 +43,66 @@ export default function Header() {
         </h1>
       </Link>
 
-      <nav>
-        <NavLink
-          className={({ isActive }) => (isActive ? styles.isActive : "")}
-          to="/search"
-        >
-          Explorar
-        </NavLink>
-        <Link href="#">¿Cómo funciona?</Link>
-        <Link href="#">Conviertete en vendedor</Link>
-      </nav>
+      <div className={styles.headerContent} id="header-menu">
+        <nav onClick={closeMenu}>
+          <NavLink
+            className={({ isActive }) => (isActive ? styles.isActive : "")}
+            to="/search"
+          >
+            Explorar
+          </NavLink>
+          <Link href="#">¿Cómo funciona?</Link>
+          <Link href="#">Conviertete en vendedor</Link>
+        </nav>
 
-      <div className={styles.headerActions}>
-        {isLoggedIn ? (
-          <>
-            <NavLink
-              className={({ isActive }) =>
-                `${styles.headerLink} ${isActive ? styles.isActive : ""}`
-              }
-              to="/favorites"
-            >
-              Favorites:({numberOfFavorites})<IconHeart size={21} stroke={1.5}/>
-            </NavLink>
+        <div className={styles.headerActions} onClick={closeMenu}>
+          {isLoggedIn ? (
+            <>
+              <NavLink
+                className={({ isActive }) =>
+                  `${styles.headerLink} ${isActive ? styles.isActive : ""}`
+                }
+                to="/favorites"
+              >
+                Favorites:({numberOfFavorites})
+                <IconHeart size={21} stroke={1.5} />
+              </NavLink>
 
-            <NavLink
-              className={({ isActive }) =>
-                `${styles.headerLink} ${isActive ? styles.isActive : ""}`
-              }
-              to="/profile"
-            >
-              Profile
-            </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  `${styles.headerLink} ${isActive ? styles.isActive : ""}`
+                }
+                to="/profile"
+              >
+                Profile
+              </NavLink>
 
-            <Link className={styles.btnPrimary} onClick={logout}>
-              Cerrar sesión
+              <Link className={styles.btnPrimary} onClick={logout}>
+                Cerrar sesión
+              </Link>
+            </>
+          ) : (
+            <Link href="#" className={styles.btnPrimary} onClick={login}>
+              Iniciar sesión
             </Link>
-          </>
-        ) : (
-          <Link href="#" className={styles.btnPrimary} onClick={login}>
-            Iniciar sesión
-          </Link>
-        )}
+          )}
 
-        {!isLoggedIn && (
-          <Link href="#" className={styles.btnSecondary}>
-            Registrarse
-          </Link>
-        )}
+          {!isLoggedIn && (
+            <Link href="#" className={styles.btnSecondary}>
+              Registrarse
+            </Link>
+          )}
+        </div>
       </div>
 
-      <button className={styles.menuToggle} aria-label="Abrir menú">
+      <button
+        className={styles.menuToggle}
+        type="button"
+        onClick={toggleMenu}
+        aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
+        aria-expanded={isMenuOpen}
+        aria-controls="header-menu"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="26"

@@ -1,43 +1,52 @@
+.results {
+  width: 100%;
+  min-width: 0;
+}
+
 .resultsHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   padding: 1rem 1.75rem;
-
-  p {
-    color: var(--text-muted);
-  }
-
-  select {
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.5rem;
-    border-color: var(--border);
-    background: var(--background-secondary);
-    color: var(--primary);
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s;
-  }
-
-  select:hover {
-    border-color: var(--primary-light);
-    color: var(--text-primary);
-  }
 }
 
-@media (max-width: 768px) {
-  .resultsHeader {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
+.resultsHeader p {
+  margin: 0;
+  color: var(--text-muted);
 }
 
+.resultsControls {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.sort {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sort select {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--background-secondary);
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  height: 42px;
+}
+
+.sort select:hover {
+  border-color: var(--primary-light);
+  color: var(--text-primary);
+}
 
 .searchServices {
   display: grid;
-  padding: 0rem 1.75rem;
-
+  padding: 0 1.75rem;
   grid-template-columns: repeat(auto-fill, minmax(250px, 360px));
   gap: 1rem;
   justify-content: center;
@@ -49,34 +58,34 @@
   font-size: 12px;
 }
 
-.optGroup option {
-  font-weight: 400;
-  color: var(--text-primary);
-  font-size: 14px;
-}
-
 .noServices {
   color: var(--text-muted);
   font-weight: 500;
 }
 
+@media (max-width: 992px) {
+  .resultsHeader {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
 
-/*BOTON DE PRUEBA*/
-.btnAdd {
-  background: var(--background-primary);
-  border: none;
-  border-radius: 10px;
-  padding: 0.5rem 0.5rem;
-  color: var(--text-primary);
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.2s;
+  .resultsControls {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: end;
+    gap: 0.75rem;
+  }
 
-  &.isApplied{
-    background: #4caf4fab;
-    color: var(--text-secondary);
-    cursor: not-allowed;
-    pointer-events: none;
+  .sort {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.35rem;
+    min-width: 0;
+  }
+
+  .sort select {
+    width: 100%;
+    min-width: 0;
   }
 }
-

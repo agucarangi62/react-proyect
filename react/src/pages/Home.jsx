@@ -1,6 +1,5 @@
-
+import styles from "./Home.module.css";
 import ServiceCard from "../components/ServiceCard.jsx";
-import MobileMenu from "../components/MobileMenu.jsx";
 import SearchFormSection from "../components/SearchFormSection.jsx";
 
 import getServices from "../services/serviceService.js";
@@ -20,17 +19,14 @@ export default function HomePage() {
 
   return (
     <>
-      <MobileMenu />
-
       <SearchFormSection />
-
       <main className="container">
         <title>ServiceMarket - Encuentra servicios freelance</title>
         <section>
-          <div className="popular-services">
+          <div className={styles.popularServices}>
             <h2>Servicios Populares</h2>
 
-            <div className="services">
+            <div className={styles.services}>
               {popularServices.map((service) => (
                 <ServiceCard key={service.id} {...service} />
               ))}

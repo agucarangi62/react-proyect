@@ -15,8 +15,7 @@ export default function SearchFormSection() {
   };
 
   return (
-    <>
-      <section className={`hero  ${styles.heroBackground}`}>
+      <section className={styles.heroBackground}>
         <div className={styles.heroContent}>
           <h1>Tus ideas merecen grandes <span>profesionales.</span></h1>
 
@@ -55,7 +54,5 @@ export default function SearchFormSection() {
           </form>
         </div>
       </section>
-      
-    </>
   );
 }

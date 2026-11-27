@@ -13,26 +13,36 @@ const ServiceDetail = lazy(() => import("./pages/ServiceDetail.jsx"));
 const ProfilePage = lazy(() => import("./pages/ProfilePage.jsx"));
 const Login = lazy(() => import("./pages/Login.jsx"));
 const Register = lazy(() => import("./pages/Register.jsx"));
+const FreelancerProfilePage = lazy(
+  () => import("./pages/FreelancerProfile.jsx"),
+);
 
 function App() {
   return (
     <>
       <Header />
-      <Suspense fallback={<div>Cargando...</div>}></Suspense>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/search" element={<SearchPage />} />
-        <Route path="/service/:serviceId" element={<ServiceDetail />} />
-        <Route path="/profile" element={
-            <ProtectedRoute redirectTo='/login'>
-              <ProfilePage />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="*" element={<NotFoundPage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Routes>
+      <Suspense fallback={<div>Cargando...</div>}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/service/:serviceId" element={<ServiceDetail />} />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute redirectTo="/login">
+                <ProfilePage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/freelancer/:freelancerId"
+            element={<FreelancerProfilePage />}
+          />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
       <Footer />
     </>
   );
